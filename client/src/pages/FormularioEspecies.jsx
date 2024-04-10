@@ -5,20 +5,20 @@
  */
 import { Form, Formik } from 'formik';
 //Importa la función para hacer solicitar una inserción al backend desde el frontend
-import { solicitudCrearEspecie } from '../api/especies.api'; 
+import { solicitudCrearEspecie } from '../api/especies.api';
 
 function FormularioEspecies() {
     return (
         <div>
             <Formik
-                initialValues = {{
+                initialValues={{
                     NOMBRE_ESPECIE: "",
                     DESCRIPCION: ""
                 }}
-                onSubmit = {async (values, actions) => {
+                onSubmit={async (values, actions) => {
                     console.log(values)
                     try {
-                        const response = await solicitudCrearEspecie(values)   
+                        const response = await solicitudCrearEspecie(values)
                         console.log(response)
                         actions.resetForm()
                     } catch (error) {
@@ -29,25 +29,25 @@ function FormularioEspecies() {
                 {({ handleChange, handleSubmit, values, isSubmitting }) => (
                     <Form onSubmit={handleSubmit}>
                         <label>Nombre de la especie</label>
-                        <input 
-                            type='text' 
-                            name='NOMBRE_ESPECIE' 
+                        <input
+                            type='text'
+                            name='NOMBRE_ESPECIE'
                             placeholder='Escribe el nombre de la especie'
                             onChange={handleChange}
                             value={values.NOMBRE_ESPECIE}
                         />
 
                         <label>Descripción</label>
-                        <textarea 
-                            name='DESCRIPCION' 
-                            rows='3' 
+                        <textarea
+                            name='DESCRIPCION'
+                            rows='3'
                             placeholder='(Opcional) Escribe una descripción de la especie'
                             onChange={handleChange}
                             value={values.DESCRIPCION}
                         ></textarea>
 
                         <button type='submit' disabled={isSubmitting}>
-                            {isSubmitting ? "Guardando..." : "Guardar"}    
+                            {isSubmitting ? "Guardando..." : "Guardar"}
                         </button>
                     </Form>
                 )}

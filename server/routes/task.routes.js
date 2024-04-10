@@ -4,14 +4,14 @@ Este archivo tiene la finalidad de asignar una URL a cada función o petición c
 Actualizar(Put) y Eliminar(Delete).
 */
 import { Router } from "express";
-import { 
+import {
     obtener_Catalogo_Alimentos,
     obtener_Alimento,
     agregar_Alimento,
     actualizar_Alimento,
     eliminar_Alimento
 } from '../controllers/catalogo_alimentos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Especies,
     obtener_Solo_Especies,
     obtener_Especie,
@@ -19,14 +19,14 @@ import {
     actualizar_Especie,
     eliminar_Especie
 } from '../controllers/especies.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Medicamentos,
     obtener_Medicamento,
     agregar_Medicamento,
     actualizar_Medicamento,
     eliminar_Medicamento
 } from '../controllers/medicamentos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Cartillas_Mascotas,
     obtener_Cartilla_Mascota,
     agregar_Medicamento_A_Cartilla_Mascota,
@@ -34,7 +34,7 @@ import {
     eliminar_Cartilla_Mascota,
     eliminar_Medicamento_De_Cartilla_Mascota
 } from '../controllers/cartilla_mascotas.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Medicamentos_Recetados,
     obtener_Mascotas_Medicadas,
     agregar_Medicamento_Mascota,
@@ -42,14 +42,14 @@ import {
     eliminar_Mascota_Medicada,
     eliminar_Medicamento_Recetado
 } from '../controllers/medicamentos_recetados.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Cuidados_Mascotas,
     obtener_Cuidados_Mascota,
     agregar_Cuidados_Mascota,
     actualizar_Cuidados_Mascota,
     eliminar_Cuidados_Mascota
 } from '../controllers/cuidados_rutinarios.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Razas,
     obtener_Solo_Razas,
     obtener_Razas_Por_Especie,
@@ -57,14 +57,14 @@ import {
     actualizar_Raza,
     eliminar_Raza
 } from '../controllers/razas.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Clientes,
     obtener_Cliente,
     agregar_Cliente,
     actualizar_Cliente,
-    eliminar_Cliente    
+    eliminar_Cliente
 } from '../controllers/clientes.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Numeros_Clientes,
     obtener_Numeros_Cliente,
     agregar_Numero_Cliente,
@@ -72,7 +72,7 @@ import {
     eliminar_Numero_Cliente,
     eliminar_Numeros_Cliente
 } from '../controllers/numeros_telefonicos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Correos_Clientes,
     obtener_Correos_Cliente,
     agregar_Correo_Cliente,
@@ -80,7 +80,7 @@ import {
     eliminar_Correos_Cliente,
     eliminar_Correo_Cliente
 } from '../controllers/correos_electronicos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Direcciones_Clientes,
     obtener_Direcciones_Cliente,
     agregar_Direccion_Cliente,
@@ -88,51 +88,51 @@ import {
     eliminar_Direccion_Cliente,
     eliminar_Direcciones_Cliente
 } from '../controllers/direcciones_referencia.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Resevaciones,
     obtener_Reservacion,
     agregar_Reservacion,
     actualizar_Reservacion,
     eliminar_Reservacion
 } from '../controllers/reservacion.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Mascotas,
     obtener_Mascota,
     agregar_Mascota,
     actualizar_Mascota,
     eliminar_Mascota
 } from '../controllers/mascotas.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Catalogo_Cuartos,
     agregar_Cuarto_Catalogo_Cuartos,
     actualizar_Cuarto_Catalogo_Cuartos,
     eliminar_Cuarto_Catalogo_Cuartos
 } from '../controllers/catalogo_cuartos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Sucursales,
     agregar_Sucursal,
     actualizar_Sucursal,
     eliminar_Sucursal
 } from '../controllers/sucursales.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Servicios,
     agregar_Servicio,
     actualizar_Servicio,
     eliminar_Servicio
 } from '../controllers/catalogo_servicios.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Empleados,
     agregar_Empleado,
     actualizar_Empleado,
     eliminar_Empleado
 } from '../controllers/empleados.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Empleados_Sucursal,
     agregar_Empleado_Sucursal,
     actualizar_Empleado_Sucursal,
     eliminar_Empleado_Sucursal
 } from '../controllers/suc_emp.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Todos_Cuartos,
     obtener_Cuartos_Sucursal,
     obtener_Cuartos_Sucursal_Tipo,
@@ -140,7 +140,7 @@ import {
     actualizar_Cuarto_Sucursal,
     eliminar_Cuarto_Sucursal
 } from '../controllers/cuartos.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Hospedajes_Sucursal,
     obtener_Hospedaje_Sucursal,
     obtener_Todos_Hospedajes,
@@ -148,7 +148,7 @@ import {
     actualizar_Hospedaje_Sucursal,
     eliminar_Hospedaje_Sucursal
 } from '../controllers/hospedaje.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Citas,
     obtener_Citas_Hospedaje,
     obtener_Cita,
@@ -156,14 +156,14 @@ import {
     actualizar_Cita,
     eliminar_Cita
 } from '../controllers/citas.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Resenas_Citas,
     obtener_Resena_Cita,
     agregar_Resena_Cita,
     actualizar_Resena_Cita,
     eliminar_Resena_Cita
 } from '../controllers/resena_citas.controllers.js' //Consulte el archivo para más información
-import { 
+import {
     obtener_Resenas_Hotel,
     obtener_Resena_Hotel,
     agregar_Resena_Hotel,
@@ -295,7 +295,7 @@ router.get('/hospedaje/:sucursal', obtener_Hospedajes_Sucursal);
 router.get('/hospedaje/:sucursal/:id', obtener_Hospedaje_Sucursal);
 router.post('/hospedaje/:sucursal', agregar_Hospedaje_Sucursal);
 router.put('/hospedaje/:sucursal/:id', actualizar_Hospedaje_Sucursal);
-router.delete('/hospedaje/:sucursal/:id', eliminar_Hospedaje_Sucursal); 
+router.delete('/hospedaje/:sucursal/:id', eliminar_Hospedaje_Sucursal);
 
 router.get('/citas', obtener_Citas);
 router.get('/citas/:hospedaje', obtener_Citas_Hospedaje);

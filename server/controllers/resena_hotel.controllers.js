@@ -8,36 +8,36 @@ Estas funciones serán invocadas en las rutas 'task.routes'.
 import { pool } from "../db.js"
 
 export const obtener_Resenas_Hotel = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "SELECT * FROM resena_hotel ORDER BY ID_RESENA_HOTEL"
     );
     res.json(result);
 };
 
 export const obtener_Resena_Hotel = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "SELECT * FROM resena_hotel WHERE ID_RESENA_HOTEL = ?",
-        [ req.params.id ]
+        [req.params.id]
     );
-    
-    if(result.length === 0){
-        return res.status(404).json({ message: "Reseña de hotel no encontrada"});
+
+    if (result.length === 0) {
+        return res.status(404).json({ message: "Reseña de hotel no encontrada" });
     }
 
     res.json(result[0]);
 };
 
-export const agregar_Resena_Hotel = async(req, res) => {
+export const agregar_Resena_Hotel = async (req, res) => {
     const { ID_SUCURSAL, ID_HOSPEDAJE, DESCRIPCION, CALIFICACION } = req.body;
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "INSERT INTO resena_hotel(ID_SUCURSAL, ID_HOSPEDAJE, CALIFICACION, DESCRIPCION) VALUES (?, ?, ?, ?)",
-        [ ID_SUCURSAL, ID_HOSPEDAJE, CALIFICACION, DESCRIPCION ]
+        [ID_SUCURSAL, ID_HOSPEDAJE, CALIFICACION, DESCRIPCION]
     );
     console.log(result);
     res.json({
-        ID_SUCURSAL, 
-        ID_HOSPEDAJE, 
-        CALIFICACION, 
+        ID_SUCURSAL,
+        ID_HOSPEDAJE,
+        CALIFICACION,
         DESCRIPCION
     });
 };
@@ -45,21 +45,21 @@ export const agregar_Resena_Hotel = async(req, res) => {
 export const actualizar_Resena_Hotel = async (req, res) => {
     const result = await pool.query(
         "UPDATE resena_hotel SET ? WHERE ID_RESENA_HOTEL = ?",
-        [ req.body, req.params.id ]
+        [req.body, req.params.id]
     );
     res.json(result);
 };
 
 export const eliminar_Resena_Hotel = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "DELETE FROM resena_hotel WHERE ID_RESENA_HOTEL = ?",
-        [ req.params.id ]
+        [req.params.id]
     );
 
-    if(result.affectedRows === 0){
-        return res.status(204).json({ message: "Reseña de hotel no encontrada"});
+    if (result.affectedRows === 0) {
+        return res.status(204).json({ message: "Reseña de hotel no encontrada" });
     }
-    else{
-        return res.json({ message: "Reseña eliminada"});
+    else {
+        return res.json({ message: "Reseña eliminada" });
     }
 };

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { solicitudConsultarMascotas }from '../api/mascotas.api';
+import { solicitudConsultarMascotas } from '../api/mascotas.api';
 import TarjetaMascota from '../components/ElementoMascotas';
 
 function ConsultarMascotas() {
-    const [ mascotas, setMascotas ] = useState([])
+    const [mascotas, setMascotas] = useState([])
 
     useEffect(() => {
         async function cargarMascotas() {
@@ -14,7 +14,7 @@ function ConsultarMascotas() {
     }, [])
 
     function renderMain() {
-        if(mascotas.length == 0) return <h2>No se han registrado mascotas aún</h2>
+        if (mascotas.length == 0) return <h2>No se han registrado mascotas aún</h2>
         return mascotas.map(mascota => (<TarjetaMascota mascota={mascota} key={mascota.ID_MASCOTA} />))
     }
 

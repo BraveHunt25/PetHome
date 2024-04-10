@@ -8,36 +8,36 @@ Estas funciones serán invocadas en las rutas 'task.routes'.
 import { pool } from "../db.js"
 
 export const obtener_Clientes = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "SELECT * FROM clientes ORDER BY CURP"
     );
     res.json(result);
 };
 
 export const obtener_Cliente = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "SELECT * FROM clientes WHERE CURP = ?",
-        [ req.params.curp ]
+        [req.params.curp]
     );
-    
-    if(result.length === 0){
-        return res.status(404).json({ message: "Cliente no encontrado"});
+
+    if (result.length === 0) {
+        return res.status(404).json({ message: "Cliente no encontrado" });
     }
 
     res.json(result[0]);
 };
 
-export const agregar_Cliente = async(req, res) => {
+export const agregar_Cliente = async (req, res) => {
     const { CURP, NOMBRES, PRIMER_APELLIDO, SEGUNDO_APELLIDO } = req.body;
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "INSERT INTO clientes(CURP, NOMBRES, PRIMER_APELLIDO, SEGUNDO_APELLIDO) VALUES (?, ?, ?, ?)",
         [CURP, NOMBRES, PRIMER_APELLIDO, SEGUNDO_APELLIDO]
     );
     console.log(result);
     res.json({
-        CURP, 
-        NOMBRES, 
-        PRIMER_APELLIDO, 
+        CURP,
+        NOMBRES,
+        PRIMER_APELLIDO,
         SEGUNDO_APELLIDO
     });
 };
@@ -45,21 +45,21 @@ export const agregar_Cliente = async(req, res) => {
 export const actualizar_Cliente = async (req, res) => {
     const result = await pool.query(
         "UPDATE clientes SET ? WHERE CURP = ?",
-        [ req.body, req.params.curp ]
+        [req.body, req.params.curp]
     );
     res.json(result);
 };
 
 export const eliminar_Cliente = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "DELETE FROM clientes WHERE CURP = ?",
-        [ req.params.curp ]
+        [req.params.curp]
     );
 
-    if(result.affectedRows === 0){
-        return res.status(204).json({ message: "Cliente no encontrado"});
+    if (result.affectedRows === 0) {
+        return res.status(204).json({ message: "Cliente no encontrado" });
     }
-    else{
-        return res.json({ message: "Cliente eliminado"});
+    else {
+        return res.json({ message: "Cliente eliminado" });
     }
 };

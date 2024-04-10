@@ -1,13 +1,13 @@
 import { solicitudEliminarMascota } from '../api/mascotas.api.js';
 
-function TarjetaMascota({mascota}) {
-    const handleDelete = async(idMascota) => {
+function TarjetaMascota({ mascota }) {
+    const handleDelete = async (idMascota) => {
         try {
             const response = await solicitudEliminarMascota(idMascota);
             console.log(response);
         } catch (error) {
             console.error(error)
-        }  
+        }
     }
     return (
         <div>

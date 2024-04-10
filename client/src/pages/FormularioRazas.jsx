@@ -10,7 +10,7 @@ import { Form, Formik, Field } from 'formik';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { solicitudCrearRaza } from '../api/razas.api'; 
+import { solicitudCrearRaza } from '../api/razas.api';
 
 function FormularioRazas() {
     const [especies, setEspecies] = useState([]);
@@ -27,18 +27,18 @@ function FormularioRazas() {
 
         fetchEspecies();
     }, []);
-    
+
     return (
         <div>
             <Formik
-                initialValues = {{
+                initialValues={{
                     NOMBRE_RAZA: "",
                     NOMBRE_ESPECIE: ""
                 }}
-                onSubmit = {async (values, actions) => {
+                onSubmit={async (values, actions) => {
                     console.log(values)
                     try {
-                        const response = await solicitudCrearRaza(values)   
+                        const response = await solicitudCrearRaza(values)
                         console.log(response)
                         actions.resetForm()
                     } catch (error) {
@@ -57,18 +57,18 @@ function FormularioRazas() {
                         </Field>
                         <label>¿No encuentras la especie que buscas?</label>
                         <label>Ingresa <Link to="/RegistrarEspecie">aquí</Link> para agregar una nueva Especie</label>
-                        
+
                         <label>Nombre de la raza</label>
-                        <input 
-                            type='text' 
-                            name='NOMBRE_RAZA' 
+                        <input
+                            type='text'
+                            name='NOMBRE_RAZA'
                             placeholder='Escribe el nombre de la raza'
                             onChange={handleChange}
                             value={values.NOMBRE_RAZA}
                         />
 
                         <button type='submit' disabled={isSubmitting}>
-                            {isSubmitting ? "Guardando..." : "Guardar"}    
+                            {isSubmitting ? "Guardando..." : "Guardar"}
                         </button>
                     </Form>
                 )}

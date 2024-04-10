@@ -15,14 +15,14 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<HomePage/>} />
-        <Route path='/RegistrarEspecie' element={<FormularioEspecies/>} />
-        <Route path='/RegistrarRaza' element={<FormularioRazas/>} />
-        <Route path='/RegistrarMascota' element={<FormularioMascota/>} />
-        <Route path='/ConsultarMascotas' element={<ConsultaMascotas/>} />
-        <Route path='*' element={<NotFound/>} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/RegistrarEspecie' element={<FormularioEspecies />} />
+        <Route path='/RegistrarRaza' element={<FormularioRazas />} />
+        <Route path='/RegistrarMascota' element={<FormularioMascota />} />
+        <Route path='/ConsultarMascotas' element={<ConsultaMascotas />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )

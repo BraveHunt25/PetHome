@@ -8,20 +8,20 @@ Estas funciones serán invocadas en las rutas 'task.routes'.
 import { pool } from "../db.js"
 
 export const obtener_Sucursales = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "SELECT * FROM sucursales ORDER BY ID_SUCURSAL"
     );
     res.json(result);
 };
 
-export const agregar_Sucursal = async(req, res) => {
+export const agregar_Sucursal = async (req, res) => {
     const { CIUDAD_UBICACION } = req.body;
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "INSERT INTO sucursales(CIUDAD_UBICACION) VALUES (?)",
-        [ CIUDAD_UBICACION ]
+        [CIUDAD_UBICACION]
     );
     console.log(result);
-    res.json({ 
+    res.json({
         CIUDAD_UBICACION
     });
 };
@@ -29,21 +29,21 @@ export const agregar_Sucursal = async(req, res) => {
 export const actualizar_Sucursal = async (req, res) => {
     const result = await pool.query(
         "UPDATE sucursales SET ? WHERE ID_SUCURSAL = ?",
-        [ req.body, req.params.idTipo ]
+        [req.body, req.params.idTipo]
     );
     res.json(result);
 };
 
 export const eliminar_Sucursal = async (req, res) => {
-    const [ result ] = await pool.query(
+    const [result] = await pool.query(
         "DELETE FROM sucursales WHERE ID_SUCURSAL = ?",
-        [ req.params.idTipo ]
+        [req.params.idTipo]
     );
 
-    if(result.affectedRows === 0){
-        return res.status(204).json({ message: "Sucursal no encontrada"});
+    if (result.affectedRows === 0) {
+        return res.status(204).json({ message: "Sucursal no encontrada" });
     }
-    else{
-        return res.json({ message: "Sucursal eliminada"});
+    else {
+        return res.json({ message: "Sucursal eliminada" });
     }
 };

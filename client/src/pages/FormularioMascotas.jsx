@@ -8,7 +8,7 @@
 import { Form, Formik, Field } from 'formik';
 import React, { useState, useEffect } from 'react';
 //Importa la función para hacer solicitar una inserción al backend desde el frontend
-import { solicitudCrearMascota } from '../api/mascotas.api'; 
+import { solicitudCrearMascota } from '../api/mascotas.api';
 import { solcitudConsultarSoloRazas } from '../api/razas.api';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -32,17 +32,17 @@ function FormularioMascotas() {
     return (
         <div>
             <Formik
-                initialValues = {{
+                initialValues={{
                     NOMBRE_RAZA: "",
                     NOMBRE_MASCOTA: "",
                     TAMANO: "Pequeño",
                     FECHA_NACIMIENTO: new Date(),
                     COLOR: ""
                 }}
-                onSubmit = {async (values, actions) => {
+                onSubmit={async (values, actions) => {
                     console.log(values)
                     try {
-                        const response = await solicitudCrearMascota(values)   
+                        const response = await solicitudCrearMascota(values)
                         console.log(response)
                         actions.resetForm()
                     } catch (error) {
@@ -63,9 +63,9 @@ function FormularioMascotas() {
                         <label>Ingresa <Link to="/RegistrarRaza">aquí</Link> para registrar una nueva Raza</label>
 
                         <label>Nombre de la mascota</label>
-                        <input 
-                            type='text' 
-                            name='NOMBRE_MASCOTA' 
+                        <input
+                            type='text'
+                            name='NOMBRE_MASCOTA'
                             placeholder='Escribe el nombre de la mascota'
                             onChange={handleChange}
                             value={values.NOMBRE_MASCOTA}
@@ -77,24 +77,24 @@ function FormularioMascotas() {
                             value={values.TAMANO}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            style={{display: 'block'}}
+                            style={{ display: 'block' }}
                         >
-                            <option 
+                            <option
                                 value=""
                                 label='Selecciona un tamaño'>
                                 Selecciona un tamaño{""}
                             </option>
-                            <option 
+                            <option
                                 value="Pequeño"
                                 label='Pequeño'>
                                 Pequeño
                             </option>
-                            <option 
+                            <option
                                 value="Mediano"
                                 label='Mediano'>
                                 Mediano
                             </option>
-                            <option 
+                            <option
                                 value="Grande"
                                 label='Grande'>
                                 Grande
@@ -102,23 +102,23 @@ function FormularioMascotas() {
                         </select>
 
                         <label>Fecha de nacimiento</label>
-                        <input 
-                            type="date" 
+                        <input
+                            type="date"
                             name="FECHA_NACIMIENTO"
                             onChange={handleChange}
                             value={values.FECHA_NACIMIENTO
-                        }/>
+                            } />
 
-                        <input 
-                            type='text' 
-                            name='COLOR' 
+                        <input
+                            type='text'
+                            name='COLOR'
                             placeholder='Escribe el o los colores de la mascota'
                             onChange={handleChange}
                             value={values.COLOR}
                         />
 
                         <button type='submit' disabled={isSubmitting}>
-                            {isSubmitting ? "Guardando..." : "Guardar"}    
+                            {isSubmitting ? "Guardando..." : "Guardar"}
                         </button>
                     </Form>
                 )}
