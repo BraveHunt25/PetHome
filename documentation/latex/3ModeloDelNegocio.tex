@@ -73,7 +73,7 @@
 	
 \begin{figure}[htpb!]
 	\begin{center}
-		\includegraphics[angle=90,width=.95\textwidth]{images/modeloDelDominioDelProblema}
+		\includegraphics[angle=90,width=.60\textwidth]{images/Base_Datos}
 		\caption{Modelo del dominio del problema}
 		\label{fig:modeloDeDominio}
 	\end{center}
@@ -84,6 +84,41 @@
 %\brRelGeneralization	Relación de generalización
 %\brRelParticipation	Relación de participación
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{mascota}{Mascota}%{}
+	\brAttr{nombre}{Nombre}{Palabra Corta}
+		{Nombre o nombres de la mascota.}{Sí}
+	\brAttr{tamano}{Tamaño}{\hyperlink{tamanoMascota}{Tamaño mascota}}
+		{Tamaño de la mascota.}{Sí}
+	\brAttr{fechaNacimiento}{Fecha de Nacimiento}{date}
+		{Fecha de nacimiento de la mascota.}{Sí}
+	\brAttr{CRUAC}{CRUAC}{CURP}
+		{CRUAC de la mascota.}{Sí}
+	\brAttr{especie}{Especie}{\hyperlink{nombreEspecie}{Nombre especie}}
+		{Especie de la mascota.}{Sí}
+	\brAttr{raza}{Raza}{\hyperlink{nombreRaza}{Nombre raza}}
+		{Raza de la mascota.}{Sí}
+	\brAttr{foto}{Fotografia}{imagen}
+		{Fotografia de la mascota.}{Sí}
+	\brAttr{tipoVacuna}{Tipo de vacuna}{\hyperlink{vacunaMascota}{Vacuna mascota}}
+		{Tipo de vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{nombreVacuna}{Nombre de la vacuna}{Palabra corta}
+		{Nombre de la vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{fechaAplicacion}{Ultima fecha de aplicación}{date}
+		{Ultima fecha de aplicación de la vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{dosis}{Numero de dosis aplicadas}{Numero}
+		{Numero de dosis aplicadas de la vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{alergias}{Alergias}{\hyperlink{AlergiaMascota}{Alergia Mascota}}
+		{Numero de dosis aplicadas de la vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{tratamientoMedico}{Tratamiento Medico}{\hyperlink{tratamientoMedicoMascota}{Tratamiento medico mascota}}
+		{Numero de dosis aplicadas de la vacuna con la que cuenta la mascota.}{Sí}
+	\brAttr{caracteristicasEspeciales}{Caracteristicas Especiales}{varchar}
+		{Caracteristicas especiales fisicas o de comportamiento de la mascota.}{Sí}
+	%\cdtEntityRelSection
+	%\brRel{\brRelAgregation}{País}{Un \hyperlink{Alumno}{Alumno} es originario de un \hyperlink{Pais}{Pais}}	
+	%\brRel{\brRelGeneralization}{Alumno}{Un \hyperlink{AlumnoExtranjero}{Alumno Extranjero} es un  \hyperlink{Alumno}{Alumno}}	
+	%\brRel{\brRelParticipation}{Alumno}{Un \hyperlink{AlumnoExtranjero}{Alumno Extranjero} es un  \hyperlink{Alumno}{Alumno}}	
+\end{cdtEntidad}
+
 \begin{cdtEntidad}{SUCURSAL}{Sucursal}
 	\brAttr{ID_SUCURSAL}{ID de la sucursal}{ID}{ID interno asignado a cada sucursal.}{Sí}
 	\brAttr{NOMBRE_SUCURSAL}{Nombre de la sucursal}{Cadena}{Nombre comercial de la sucursal.}{Sí}
