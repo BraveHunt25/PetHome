@@ -1,0 +1,78 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Presentación}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Organización del contenido}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Notación, símbolos y convenciones utilizadas}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Modelo del alcance}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Análisis de la problemática}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Contexto del proyecto}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Problemas identificados}{3}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Análisis de causas probables}{4}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Análisis de posibles consecuencias}{4}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Características de la solución}{4}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Síntesis de la problemática}{4}{subsection.2.1.6}%
+\contentsline {section}{\numberline {2.2}Objetivos del proyecto}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Objetivo general}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Objetivos específicos}{4}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Usuarios identificados}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Procesos involucrados}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Requerimientos de usuario}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Especificación de plataforma}{5}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Modelo del Negocio}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Actores del sistema}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Nombre del usuario}{9}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Términos del Negocio}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Modelo del dominio del problema}{10}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Entidad: Alumno}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Entidad: Alumno Extranjero}{11}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Modelado de Reglas de negocio}{11}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Máquinas de estado}{13}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Estados para un préstamo}{13}{subsection.3.5.1}%
+\contentsline {subsubsection}{Estados}{13}{section*.4}%
+\contentsline {subsubsection}{Acciones}{13}{section*.5}%
+\contentsline {section}{\numberline {3.6}Modelo de Procesos AS-IS}{13}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}PROC-01 Nombre del proceso}{15}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}Modelo de procesos TO-BE}{15}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}PROCM-01 ...}{17}{subsection.3.7.1}%
+\contentsline {chapter}{\numberline {4}Modelo dinámico}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Descripción de casos de uso}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}CU1 Registrar Cliente}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Descripción completa}{22}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Atributos importantes}{22}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Trayectorias del Caso de Uso}{23}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Puntos de extensión}{23}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}CU2 Registrar Mascota}{24}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Descripción completa}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Atributos importantes}{24}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Trayectorias del Caso de Uso}{25}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Puntos de extensión}{25}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}CUX Escriba el nombre del caso de uso}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Descripción completa}{26}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Atributos importantes}{26}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Trayectorias del Caso de Uso}{26}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Puntos de extensión}{27}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}CUX Escriba el nombre del caso de uso}{28}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Descripción completa}{28}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Atributos importantes}{28}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Trayectorias del Caso de Uso}{28}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Puntos de extensión}{29}{subsection.4.5.4}%
+\contentsline {section}{\numberline {4.6}CUX Escriba el nombre del caso de uso}{30}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Descripción completa}{30}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Atributos importantes}{30}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Trayectorias del Caso de Uso}{30}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Puntos de extensión}{31}{subsection.4.6.4}%
+\contentsline {section}{\numberline {4.7}CUX Escriba el nombre del caso de uso}{32}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Descripción completa}{32}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Atributos importantes}{32}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Trayectorias del Caso de Uso}{32}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}Puntos de extensión}{33}{subsection.4.7.4}%
+\contentsline {chapter}{\numberline {5}Modelo de la interacción}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modelo de navegación}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}IUX Interfaz (nombre de la interfaz)}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Objetivo}{35}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Diseño}{35}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Salidas}{36}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Entradas}{36}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Comandos}{36}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Catálogo de mensajes}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Lista de mensajes}{38}{subsection.5.3.1}%

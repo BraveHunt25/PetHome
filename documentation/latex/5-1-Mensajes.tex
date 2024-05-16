@@ -1,0 +1,136 @@
+%!TEX root = ejemplo.tex
+%=========================================================
+\section{Catálogo de mensajes}	
+\label{sec:mensajes}
+
+	En esta sección se describen todos los mensajes que aparecen en el sistema. Para cada mensaje se especifica:
+	 
+	\begin{description}\itemsep0em
+		\item[Id:] Identificador del mensaje de la forma ``MSG XX'' y descripción corta del mismo.
+		\item[Tipo:] Tipo del mensaje el cual puede ser: 
+		\begin{description}
+			\item[Normal:] Mensaje que informa al usuario una instrucción o el estado interno que guarda el sistema, suele tener un color {\color{msgNormalColor}Azul}.
+			\item[Éxito:] Mensaje que informa al usuario sobre una acción realizada, sirve para confirmar el correcto funcionamiento del sistema. Se presentan con un color {\color{msgInfoColor}Verde}.
+			\item[Atención:] Mensaje que tiene como finalidad llamar la atención del usuario a una situación que requiere su intervención, por ejemplo cuando una actividad ha generado un efecto colateral o se realizará una acción destructiva y no reversible. Se presentan con un color {\color{msgWarningColor}Naranja}.
+			\item[Error:] Mensaje que informa al usuario un fallo en en una operación o un impedimento para realizarla, por ejemplo: cuando no se puede efectuar la acción solicitada, cuando un dato falta o tiene un formato no aceptado por el sistema. Se presentan con un color {\color{msgErrorColor}Rojo}.
+		\end{description}
+		\item[Propósito:] Explicación del propósito del mensaje.
+		\item[Redacción:] Redacción del mensaje.
+		\item[Parámetros:] En caso de que el mensaje pueda variar se especifican los casos y la forma en que debe adaptarse la redacción
+		\item[Ejemplos:] Ejemplos de como debe renderizarse el mensaje.
+	\end{description}
+
+
+\subsection{Lista de mensajes}
+%msgNormalColor
+%msgInfoColor
+%msgWarninigColor
+%msgErrorColor
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-001}{Campo obligatorio}
+	\item[Propósito:] Indicar al usuario que existen campos vacíos en su petición que son obligatorios para completar con éxito la operación
+	\item[Redacción:] El campo "$<$atributo$>$" debe ser llenado para continuar.
+	\item[Parámetros:] \hspace{1cm}
+	\begin{itemize}
+		\item $<$atributo$>$ se refiere al nombre del atributo que se está dejando vacío en la petición.
+	\end{itemize}
+	\item[Ejemplos:] El campo $"$CURP$"$ debe ser llenado para continuar.
+\end{cdtMessage}
+
+%Mensaje sin establecer ni usar
+\begin{cdtMessage}[msgErrorColor]{MSG-002}{RUAC ya existente} 
+	\item[Propósito:] Indicar al usuario que el RUAC ingresado para la mascota ya se encuentra asociado a otra en el sistema.
+	\item[Redacción:] El RUAC $<$RUAC$>$ ya se encuentra asociado a otra mascota.
+	\item[Parámetros:] \hspace{1cm}
+	\begin{itemize}
+		\item $<$RUAC$>$ Se refiere al \hyperlink{mascota.RUAC}{RUAC} que el usuario desea asociar a su mascota.
+	\end{itemize}
+	\item[Ejemplos:] El RUAC PHCXA50604 ya se encuentra asociado a otra mascota.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-003}{No hay reservaciones} 
+	\item[Propósito:] Indicar al cliente que no tiene reservaciones realizadas o sin pagar.
+	\item[Redacción:] No tienes reservaciones. ¿Deseas realizar una?.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] No tienes reservaciones. ¿Deseas realizar una?.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-004}{Vacunas obligatorias}
+	\item[Propósito:] Indicar al usuario que para poder registrar a su mascota y sea aceptada para hospedarse en el hotel debe contar con las 3 vacunas mínimas obligatorias.
+	\item[Redacción:] Por tu seguridad y la de los demás, tu mascota debe contar con las 3 vacunas mínimas obligatotias.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Por tu seguridad y la de los demás, tu mascota debe contar con las 3 vacunas mínimas obligatotias.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-005}{CURP ya existente}
+	\item[Propósito:] Indica al usuario que el CURP con el que intenta registrarse ya es ocupado por otro perfil.
+	\item[Redacción:] El CURP introducido ya está registrado en otro perfil.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] El CURP introducido ya está registrado en otro perfil.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-006}{Correo electrónico ya existente}
+	\item[Propósito:] Indicar al usuario que el correo electrónico con el que intenta registrarse ya es ocupado por otro perfil.
+	\item[Redacción:] El correo electrónico introducido ya está registrado en otro perfil.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] El correo electrónico introducido ya está registrado en otro perfil.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-007}{Dato no válido}
+	\item[Propósito:] Indicar al usuario que uno o más campos están siendo llenados con formatos no válidos en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}
+
+%Mensaje establecido y en uso
+\begin{cdtMessage}[msgErrorColor]{MSG-008}{Fecha no disponible} 
+	\item[Propósito:] Indicar al usuario que en las fechas que selecciona su hospedaje no hay cuartos disponibles con las características solicitadas.
+	\item[Redacción:] Lo sentimos, no hay cuartos disponibles para el periodo del $<$check-in$>$ al $<$check-out$>$ con las características requeridas. Seleccione otro periodo. 
+	\item[Parámetros:] \hspace{1cm}
+	\begin{itemize}
+		\item $<$check-in$>$ Fecha proyectada de llegada y en la que se inicia el periodo de hospedaje.
+		\item $<$check-out$>$ Fecha proyectada de salida y en la que se finaliza el periodo de hospedaje.
+	\end{itemize}
+	\item[Ejemplos:] \hspace{1cm}
+	\begin{itemize}
+		\item Lo sentimos, no hay cuartos disponibles para el periodo del 07-05-2024 al 09-05-2024 con las características requeridas. Seleccione otro periodo. 
+	\end{itemize}
+\end{cdtMessage}
+\begin{cdtMessage}[msgErrorColor]{MSG-009}{Tamaño no valido (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación}
+	\item[Propósito:] Indicar al usuario que el campo de tamaño esta siendo modificado, no coincide con el tamaño especificado en la reservación, por lo que no es válido en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}
+
+\begin{cdtMessage}[msgErrorColor]{MSG-010}{Raza no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)}
+	\item[Propósito:] Indicar al usuario que uno o más campos están siendo llenados con formatos no válidos en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}
+\begin{cdtMessage}[msgErrorColor]{MSG-011}{Especie no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)}
+	\item[Propósito:] Indicar al usuario que uno o más campos están siendo llenados con formatos no válidos en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}
+\begin{cdtMessage}[msgErrorColor]{MSG-012}{La aplicacion de la vacuna expira antes o durante su estancia}
+	\item[Propósito:] Indicar al usuario que uno o más campos están siendo llenados con formatos no válidos en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}
+\begin{cdtMessage}[msgErrorColor]{MSG-020}{Registro ya existente}
+	\item[Propósito:] Indicar al usuario que uno o más campos están siendo llenados con formatos no válidos en su solicitud para poder realizar con éxito la operación.
+	\item[Redacción:] Introduzca valores válidos en los campos correspondientes.
+	\item[Parámetros:] No aplica.
+	\item[Ejemplos:] Introduzca valores válidos en los campos correspondientes.
+\end{cdtMessage}

@@ -1,0 +1,39 @@
+% !TeX root = ../proyecto.tex
+%--------------------------------------
+\section{IU5 Pantalla Home Cliente}
+
+\subsection{Objetivo}
+	\cdtInstrucciones El objetivo de esta pantalla es permitir al cliente ver sus reservacionses, para que de esta forma tenga la opcion de editarlas o eliminarlas, y tambien que tenga la opcion de hacer una reservacion .
+
+\subsection{Diseño}
+	\cdtInstrucciones Esta pantalla {UI5}{Pantalla Home Cliente} aparece al momento de registrarse o iniciar sesion, una vez dentro tenemos la opcion de hacer una reservacion dando click en el boton \IUbutton{Reservar}, asi como visualizar nuestras reservaciones y tener la opcion de editar o eliminar la reservacion con los botones \IUbutton{Editar},\IUbutton{Eliminar}.
+
+\IUfig[.7]{Reservaciones}{IU5}{Pantalla de Home Cliente}
+\IUfig[.7]{sinReservaciones}{IU5}{Pantalla de Home Cliente sin reservaciones}
+
+%\IUfig[ancho de la figura: valor entre 1 y .1]{Nombre corto de la pantalla sin espacions ni acentos}{IUXX}{Nombre largo de la pantalla.}
+
+\subsection{Salidas}
+
+	%\cdtInstrucciones{Liste las salidas de la interfaz. Si coinciden con las del caso de uso solo indiquelo. Esta ,ista debe incluir los mensajes}
+
+	\begin{itemize}
+		\item Si no se ha echo ninguna reservacion, se mostrara el mensaje \MSGref{MSG-003}{No hay reservaciones todavia}.
+	\end{itemize}
+	
+\subsection{Entradas}
+
+	%\cdtInstrucciones{Liste las entradas de la interfaz. Si coinciden con las del caso de uso solo indiquelo.}
+	\begin{itemize}
+		\item Ninguna
+	\end{itemize}
+
+\subsection{Comandos}
+	%\cdtInstrucciones{Describa cada control (botónes, areas de drag and drop, componentes interactivos, animaciones, etc.) que se puede utilizar dentro de la pantalla indicando o que hacen y si cambia de pantalla.}
+
+\begin{itemize}
+	\item \IUbutton{Hacer reservacion}: Muestra la pantalla \IUref{UI2}{Pantalla de Datos Obligatorios de la Mascota}.
+	\item \IUbutton{Editar}: Muestra la pantalla \IUref{UI2}{Pantalla de Datos Obligatorios de la Mascota}, con los datos de esa reservacion y permite modificarlos.
+	\item \IUbutton{Eliminar}: Elimina la reservación.
+\end{itemize}
+

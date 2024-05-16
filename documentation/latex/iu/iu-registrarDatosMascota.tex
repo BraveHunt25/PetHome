@@ -1,0 +1,40 @@
+% !TeX root = ../proyecto.tex
+%--------------------------------------
+\section{IU2 Pantalla de Datos Obligatorios de la Mascota }
+
+\subsection{Objetivo}
+	\cdtInstrucciones El objetivo de esta pantalla es permitir al usuario capturar los datos que son obligatorios de su mascota.
+
+\subsection{Diseño}
+	\cdtInstrucciones Esta pantalla \IUref{IU3}{Registrar Mascota} aparece al momento de querer hacer una reservacion, para ingresar los datos de la mascota basta con llenar la informacion desde teclado o mouse, una vez llenados todos los datos podemos hacer click en el boton \IUbutton{Registrar}   
+
+\IUfig[.7]{RegistrarDatosMascota}{IU3}{Registrar Datos Mascota}
+
+%\IUfig[ancho de la figura: valor entre 1 y .1]{Nombre corto de la pantalla sin espacions ni acentos}{IUXX}{Nombre largo de la pantalla.}
+
+\subsection{Salidas}
+
+	\begin{itemize}
+		\item Si los datos de esta pantalla no son llenados, al momento de dar click en el boton \IUbutton{Siguiente}, saltara el mensaje \MSGref{MSG-001}{Campo obligatorio}.
+	\end{itemize}
+	
+\subsection{Entradas}
+	\begin{itemize}
+		\item Las entradas son las del caso de uso \hyperlink{CU3}{CU3 Registrar Mascota}.
+		\item Nombre de la Mascota
+		\item Tamaño
+		\item Fecha de nacimiento
+		\item Especie
+		\item Raza
+		\item Color de la Mascota
+		\item RUAC
+		\item Vacunas
+	\end{itemize}
+
+\subsection{Comandos}
+	%\cdtInstrucciones{Describa cada control (botónes, areas de drag and drop, componentes interactivos, animaciones, etc.) que se puede utilizar dentro de la pantalla indicando o que hacen y si cambia de pantalla.}
+
+\begin{itemize}
+	\item \IUbutton{Siguiente}: Verifica que los datos hayan sido llenados. Si la verificación es correcta, se muestra la \IUref{UI3}{Pantalla de Datos Extra de la Mascota}.
+\end{itemize}
+

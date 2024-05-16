@@ -1,0 +1,108 @@
+%!TEX root = ../proyecto.tex
+
+% Plantilla para caso de uso sencillo con ejemplos de comandos e intrucciones.
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+%--------------------------------------
+\begin{UseCase}{CU6}{Consultar reseñas de servicio }{
+	Cuando el cliente quiera consultar las reseñas de su autoría que ha otorgado a los responsables de los servicios que haya adquirido con anterioridad en sus hospedajes, deberá ingresar a la pantalla de consulta de reseñas mediante un botón en la pantalla de inicio con el nombre de "Reseñas de servicio". Una vez dentro, podrá visualizar todas las reseñas dadas.
+}
+	\UCitem{Versión}{\color{Gray}
+		0.1
+	}\UCitem{Autor}{\color{Gray}
+		Hernández Jiménez Erick Yael.
+	}\UCitem{Supervisa}{\color{Gray}
+		Ruiz Evaristo Marco Antonio
+	}\UCitem{Cliente}{
+		\hyperlink{Cliente}{Cliente} % No olvide dar de alta el actor.
+	}\UCitem{Propósito}{\begin{Titemize}%Indique los fines, objetivos, propósitos o valores agregados del Caso de uso.
+		\Titem Visualizar todas las reseñas dadas a los responsables de servicio.
+	\end{Titemize}
+	}\UCitem{Entradas}{\begin{Titemize}
+		\Titem Ninguna.
+		\end{Titemize}
+	}\UCitem{Origen}{\begin{Titemize}
+		\Titem Ninguno.
+	\end{Titemize}
+	}\UCitem{Salidas}{\begin{Titemize}
+		% TODO: Dar de alta las entidades que se listan.
+		\Titem \hyperlink{Entidad.Atributo}{ID de la cita}.
+		\Titem \hyperlink{Entidad.Atributo}{Tipo de servicio}.
+		\Titem \hyperlink{Empleados.Atributo}{Nombres}
+		\Titem \hyperlink{Empleados.Atributo}{Primer apellido}
+		\Titem \hyperlink{Empleados.Atributo}{Segundo apellido}
+		\Titem \hyperlink{Entidad.Atributo}{ID del hospedaje}.
+		\Titem \hyperlink{Entidad.Atributo}{Descripción}.
+		\Titem \hyperlink{Entidad.Atributo}{Calificación}.
+		\Titem Mensajes de error.
+	\end{Titemize}
+	}\UCitem{Destino}{\begin{Titemize}
+		\Titem Se muestra en la pantalla \IUref{IUX}{Reseñas de servicio}.
+	\end{Titemize}
+	}\UCitem{Precondiciones}{\begin{Titemize}
+		\Titem El cliente ya debe haber iniciado sesión.
+		\Titem El cliente ya debe haber hecho al menos una reservación.
+		\Titem El cliente ya debe tener al menos un servicio atendido durante su hospedaje.
+		\Titem El cliente ya debe haber pagado en su totalidad su hospedaje.
+	\end{Titemize}
+	}\UCitem{Postcondiciones}{\begin{Titemize}
+		\Titem Ninguna.
+	\end{Titemize}
+	}\UCitem{Errores}{\begin{Titemize}
+		\Titem {\bf \hypertarget{CU6.E1}{E1}}: El cliente ingresa a la pantalla sin haber iniciado sesión.
+		\Titem {\bf \hypertarget{CU6.E2}{E2}}: El cliente no ha hecho ninguna reservación.
+		\Titem {\bf \hypertarget{CU6.E3}{E3}}: El cliente no tiene ningún servicio atendido.
+		\Titem {\bf \hypertarget{CU6.E4}{E4}}: El cliente no ha pagado su servicio en su totalidad.
+	\end{Titemize}
+	}\UCitem{Tipo}{
+		Caso de uso primario
+	}\UCitem{Observaciones}{
+		Ninguna.
+	}
+\end{UseCase}
+
+%--------------------------------------
+\begin{UCtrayectoria}
+	\UCpaso[] El cliente indica al sistema que desea visualizar las reseñas consultadas presionando el botón \IUbutton{Reseñas de servicios}.
+	\UCpaso[] El sistema verifica que el cliente haya iniciado sesión correctamente \ErrorRef{CU6}{E1}{No se ha iniciado sesión}\Trayref{CU6}{A}.
+	\UCpaso[] El sistema verifica que ya haya hospedajes registrados \ErrorRef{UC6}{E2}{No se ha hecho ninguna reservación}\Trayref{CU6}{B}.
+	\UCpaso[] El sistema verifica que tenga al menos un servicio ya atendido \ErrorRef{UC6}{E3}{No se ha contratado ningún servicio}\Trayref{CU6}{C}.
+	\UCpaso[] El sistema verifica que se haya pagado en su totalidad al menos un servicio \ErrorRef{UC6}{E4}{No se han completado los pagos necesarios}\Trayref{CU6}{D}.
+	\UCpaso[] Muestra la pantalla \IUref{IU1}{Reseñas de servicios} con las reseñas realizadas.
+\end{UCtrayectoria}
+
+%--------------------------------------
+% Las trayectorias alternativas se identifican con Letras: A, B, C, etc.
+\begin{UCtrayectoriaA}{CU6}{A}{El cliente no ha iniciado sesión}
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IU2}{Iniciar sesión} con el mensaje \MSGref{MSG-001}{Para visualizar tus reseñas, inicia sesión}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU6}{B}{El cliente no ha hecho ninguna reservación}
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IU3}{Principal} con el mensaje \MSGref{MSG-002}{No existen hospedajes registrados}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU6}{C}{El cliente no ha contratado al menos un servicio en un hospedaje}
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IU3}{Principal} con el mensaje \MSGref{MSG-003}{No existen servicios calificados}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU6}{D}{El cliente no ha completado el pago de los servicios en su totalidad}
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IU3}{Principal} con el mensaje \MSGref{MSG-004}{No se han completado los pagos necesarios}.
+\end{UCtrayectoriaA}
+
+%--------------------------------------
+% Puntos de extensión
+
+% Comente la siguiente sección en caso de que no hayan puntos de extensión o relaciones de tipo extends.
+\subsection{Puntos de extensión}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+	El usuario no recuerda cual es su contraseña o sospecha que su usuario está bloqueado.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	Del paso \ref{CUX.etiqueta} al paso \ref{CUX.etiqueta}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CUZ}{Nombre del caso de uso}.
+}
+		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

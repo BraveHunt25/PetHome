@@ -1,0 +1,38 @@
+% !TeX root = ../proyecto.tex
+%--------------------------------------
+\section{IU1 Registrar Cliente}
+
+\subsection{Objetivo}
+	\cdtInstrucciones  El objetivo de esta pantalla es permitir al cliente capturar sus datos personales, registrarse en el sistema y poder acceder a las operaciones del sistema definidas para su perfil .
+
+
+\subsection{Diseño}
+	\cdtInstrucciones Esta pantalla \IUref{IU1}{Registrar Cliente} aparece cuando el cliente solicite registarse, para ingresar sus datos personales basta con llenar la informacion desde teclado o mouse, una vez llenados todos los datos podemos hacer click en el boton \IUbutton{Registrar} . 
+
+\IUfig[.7]{RegistroCliente}{IU1}{Registrar Cliente.}
+
+%\IUfig[ancho de la figura: valor entre 1 y .1]{Nombre corto de la pantalla sin espacions ni acentos}{IUXX}{Nombre largo de la pantalla.}
+
+\subsection{Salidas}
+
+	
+
+	\begin{itemize}
+		\item Las salidas son las mismas que las del caso de uso \hyperlink{CU1}{CU1 Registrar Cliente}.
+	\end{itemize}
+	
+\subsection{Entradas}
+
+	\cdtInstrucciones{Liste las entradas de la interfaz. Si coinciden con las del caso de uso solo indiquelo.}
+	\begin{itemize}
+		\item Las entradas son las mismas que las del caso de uso \hyperlink{CU1}{CU1 Registrar Cliente}.
+	\end{itemize}
+
+\subsection{Comandos}
+	\cdtInstrucciones{Describa cada control (botónes, areas de drag and drop, componentes interactivos, animaciones, etc.) que se puede utilizar dentro de la pantalla indicando o que hacen y si cambia de pantalla.}
+
+\begin{itemize}
+	\item \IUbutton{Registrar}: Verifica que los datos personales hayan sido llenados correctamente. Si la verificación es correcta, se muestra la \IUref{UI5}{Pantalla de Home Cliente sin reservaciones}.
+	\item \IUbutton{Iniciar sesion}: Muestra la patalla \IUref{IU1.2}{Iniciar sesion}.
+\end{itemize}
+
