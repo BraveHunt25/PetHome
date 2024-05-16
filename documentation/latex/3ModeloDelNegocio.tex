@@ -1,0 +1,231 @@
+% !TeX root = proyecto.tex
+
+%=========================================================
+\chapter{Modelo del Negocio}	
+\label{cap:reqSist}
+
+\cdtInstrucciones{Introduzca el capítulo describiendo el contenido del mismo, su organización y propósito.}
+
+%----------------------------------------------------------
+\section{Actores del sistema}
+
+	\cdtInstrucciones{En esta sección describa a los actores del sistema.}
+	
+	%---------------------------------------------------------
+	\begin{Usuario}{\hypertarget{Cliente}{\subsection{Cliente}}}{
+			Es todo aquel actor que no pertenezca a la empresa y que desea desea reservar, hospedar y contratar los servicios que ofrece la empresa para su mascota.
+		}
+		\item[Responsabilidades:] \cdtEmpty
+		\begin{itemize}
+			\item Brindar datos precisos y actualizados de identificación de su persona y de su(s) mascota(s) para registrarse en el sistema y contratar los servicios que ofrece la empresa.
+			\item Gestionar sus mascotas registradas en el sistema.
+			\item Brindar datos precisos y actualizados de los medicamentos y vacunas administradas a su(s) mascota(s).
+			\item Brindar datos actualizados de las noches, cuartos y servicios que desea reservar, así como las fechas de llegada (check-in) y salida (check-out) del hotel.
+			\item Brindar datos precisos, actualizados y necesarios para pagar en el sistema por los servicios que se adquieran.
+		\end{itemize}
+		
+		\item[Perfil:] \cdtEmpty
+		\begin{itemize}
+			\item Público mexicano que disponga de los recursos para cubrir el hospedaje de sus mascotas.
+			\item Posée una o más mascotas a las que la empresa pueda ofrecer sus servicios.
+		\end{itemize}
+		\item[Procesos en los que participa:] \cdtEmpty
+		\begin{itemize}
+			%TODO: Agregar los procesos en los que se involucrará al cliente
+			\item .
+		\end{itemize}
+	\end{Usuario}
+
+	
+%---------------------------------------------------------
+\section{Términos del Negocio}
+\label{sec:terminosDeNegocio}
+
+\cdtInstrucciones{En esta sección describa todos los términos del negocio que aparecen en la especificación del sistema.}
+	
+\begin{description}
+	% Ejemplo de un término literal.
+	\item[\hypertarget{tAutomovil}{Automóvil:}] ({\em es un tipo de \hyperlink{tVehiculo}{Vehículo}}) De cuatro ruedas con capacidad de 5 a 9 personas. 
+	% Ejemplo de un término de entidad
+	\item[\hypertarget{tCliente}{Cliente:}] Se refiere a todas las personas físicas y morales que \hyperlink{tRenta}{rentan} o han rentado un \hyperlink{tVehiculo}{vehículo}.
+	
+	\item[\hypertarget{tDirector}{Director:}] ({\em es un tipo de \hyperlink{tEmpleado}{Empleado}}) Es el empleado que tiene mayor rango de todos y no tiene superior, a diferencia de los demás.	
+	\item[\hypertarget{tEmpleado}{Empleado:}] Se refiere a cualquier persona que labore en la empresa.
+	
+	\item[\hypertarget{tChecador}{Checador:}] ({\em Reloj asociado al atributo:} Hora de entrada y salida de un \hyperlink{tEmpleado}{empleado}. {\em Frecuencia de lectura:} Una vez al día para la entrada y otra para la salida durante los días laborales.
+	
+	\item[\hypertarget{tMotocicleta}{Motocicleta:}] ({\em es un tipo de {tVehiculo}{Vehículo}}) De dos ruedas con capacidad para una personas. 
+
+	\item[\hypertarget{tRenta}{Renta:}] Se refiere al servicio que ofrece la empresa para prestar \hyperlink{tVehiculo}{vehículos} a los \hyperlink{tCliente}{clientes} por un tiempo definido.
+	
+	\item[\hypertarget{tVehiculo}{Vehiculo:}] Se refiere a los automóviles y motocicletas que la empresa usa para dar el servicio de renta a los \hyperlink{tCliente}{clientes}.
+	
+%	\brTermSensor{tVelocimetro}{Velocímetro:}{Velocidad de un Vehículo.}{Kilometros/hora.}{Constantemente siempre que el \cdtRef{tVehiculo}{vehículo} esté encendido.}
+\end{description}
+
+%----------------------------------------------------------
+\section{Modelo del dominio del problema}
+\label{sec:hechosDeNegocio}
+
+\cdtInstrucciones{En esta sección describa todas las entidades del negocio y sus relaciones.}
+
+	El modelo del dominio del problema se muestra en la figura~\ref{fig:modeloDeDominio}, a continuación se describen cada una de las entidades y sus relaciones.
+	
+\begin{figure}[htpb!]
+	\begin{center}
+		\includegraphics[angle=90,width=.95\textwidth]{images/modeloDelDominioDelProblema}
+		\caption{Modelo del dominio del problema}
+		\label{fig:modeloDeDominio}
+	\end{center}
+\end{figure}
+
+%\brRelComposition	Relación de composición
+%\brRelAgregation	Relación de agregación
+%\brRelGeneralization	Relación de generalización
+%\brRelParticipation	Relación de participación
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{SUCURSAL}{Sucursal}
+	\brAttr{ID_SUCURSAL}{ID de la sucursal}{ID}{ID interno asignado a cada sucursal.}{Sí}
+	\brAttr{NOMBRE_SUCURSAL}{Nombre de la sucursal}{Cadena}{Nombre comercial de la sucursal.}{Sí}
+	\brAttr{CALLE_DIRECCION}{Nombre de calle}{Cadena}{Calle de la dirección de la sucursal.}{Sí}
+	\brAttr{NUMERO_DIRECCION}{Número de calle}{Cadena corta}{Número de calle de la dirección de la sucursal.}{Sí}
+	\brAttr{NOMBRE_COLONIA_DIRECCION}{Nombre de colonia}{Frase corta}{Nombre de la colonia donde se ubica la sucursal.}{Sí}
+	\brAttr{NOMBRE_MUNICIPIO_DIRECCION}{Nombre de municipio}{Frase corta}{Nombre del municipio donde se encuentra la sucursal.}{Sí}
+	\brAttr{CODIGO_POSTAL_DIRECCION}{Código postal}{Numérico}{Código postal de la sucursal.}{Sí}
+	\brAttr{ENTIDAD_DIRECCION}{Nombre de entidad}{Frase corta}{Entidad o estado donde se encuentra la sucursal.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Cuarto}{Una \hyperlink{SUCURSAL}{sucursal} tiene uno o más \hyperlink{CUARTO}{cuartos} en los que puede hospedar las mascotas de sus clientes.}
+	\brRel{\brRelAgregation}{Empleado}{Una \hyperlink{SUCURSAL}{sucursal} tiene uno o más \hyperlink{EMPLEADO}{empleados} que trabajan en ella.}
+	\brRel{\brRelComposition}{Reseña del hotel}{Una \hyperlink{SUCURSAL}{sucursal} tiene uno o más \hyperlink{RESENA_HOTEL}{reseñas} que califican sus estancias.}
+\end{cdtEntidad}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{MEDICAMENTO}{Medicamento}
+	\brAttr{ID_MEDICAMENTO}{ID del medicamento}{ID}{ID interno del medicamento de uso veterinario registrado en catálogos oficiales.}{Sí}
+	\brAttr{RAZON_SOCIAL}{Razón social}{Frase}{Razón social de la empresa que desarrolló y produce el medicamento.}{Sí}
+	\brAttr{NOMBRE_MEDICAMENTO}{Nombre del medicamento}{Frase}{Nombre comercial del medicamento.}{Sí}
+	\brAttr{NUMERO_REGISTRO}{Número de registro}{ID}{Número de registro del medicamento en catálogos oficiales.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Especie}{Un \hyperlink{MEDICAMENTO}{medicamento} tiene una o más \hyperlink{ESPECIE}{especies} en las que se puede aplicar.}
+\end{cdtEntidad}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{ESPECIE}{Especie}
+	\brAttr{NOMBRE_ESPECIE}{Nombre de la especie}{Cadena}{Nombre de la especie de las mascotas.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Medicamento}{Una \hyperlink{ESPECIE}{especie} puede o no tener uno o más \hyperlink{MEDICAMENTO}{medicamentos} que se le pueden aplicar.}
+	\brRel{\brRelGeneralization}{Raza}{Una \hyperlink{ESPECIE}{especie} tiene una o más \hyperlink{RAZA}{razas}.}
+	\brRel{\brRelGeneralization}{Tamaño}{Una \hyperlink{ESPECIE}{especie} tiene uno o más \hyperlink{TAMANO}{tamaños}.}
+	\brRel{\brRelAgregation}{Tipo de cuarto}{Un \hyperlink{TAMANO}{tamaño} de mascota puede o no tener uno o más \hyperlink{TIPO_CUARTO}{tipos de cuarto} en los que se puede hospedar.}
+\end{cdtEntidad}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{RAZA}{Raza}
+	\brAttr{NOMBRE_RAZA}{Nombre de la raza}{Cadena}{Nombre de la raza de las mascotas.}{Sí}
+	\brAttr{NOMBRE_ESPECIE}{Nombre de la especie}{Palabra corta}{Nombre de la especie a la que pertenece la raza.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{Mascota}{Una \hyperlink{ESPECIE}{raza} está asociado a una o más \hyperlink{MASCOTA}{mascotas}.}
+\end{cdtEntidad}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{DISPONIBILIDAD_CUARTOS}{Disponibilidad de cuartos}
+	\brAttr{ID_CUARTO}{ID del cuarto}{ID}{ID interno del cuarto en le que reservan.}{Sí}
+	\brAttr{ID_HOSPEDAJE}{ID del hospedaje}{ID}{ID interno del hospedaje o estancia.}{No}
+	\brAttr{ID_RESERVACION}{ID de reservación}{ID}{ID interno de la reservación que le corresponde a la estancia.}{Sí}
+	\brAttr{FECHA_OCUPABILIDAD}{Fecha}{Fecha}{Fecha de disponibilidad.}{Sí}
+	\brAttr{OCUPADA}{Ocupabilidad}{Booleano}{Indica si el cuarto está ocupado.}{Sí}
+	\brAttr{CHECK-IN}{Check-in}{Booleano}{Indica si la fecha es el check-in.}{Sí}
+	\brAttr{CHECK-OUT}{Check-out}{Booleano}{Indica si la fecha es el check-out.}{Sí}
+	\brAttr{CHECK-IN}{Check-in}{Booleano}{Indica si el cuarto está ocupado.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelParticipation}{Reseña de servicio}{Un \hyperlink{TIPO_CUARTO}{tipo de cuarto} puede estar asociado a uno o más
+\hyperlink{CUARTO}{cuartos}.}
+\end{cdtEntidad}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{TIPO_CUARTO}{Tipo de cuarto}
+	\brAttr{ID_TIPO_CUARTO}{ID del tipo de cuarto}{ID}{ID interno del tipo de cuarto que tienen todos los hoteles.}{Sí}
+	\brAttr{NOMBRE_CUARTO}{Nombre del cuarto}{Frase corta}{Nombre comercial del tipo de cuarto del que dispone el hotel en al menos una o más sucursales.}{Sí}
+	\brAttr{PRECIO_CUARTO}{Precio del cuarto}{Numérico con decimales}{Precio establecido para el tipo de cuarto.}{Sí}
+	\brAttr{ID_TAMANO}{ID tamaño}{ID}{ID del tamaño asociado que puede hospedar el cuarto.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelGeneralization}{Cuarto}{Un \hyperlink{TIPO_CUARTO}{tipo de cuarto} puede estar asociado a uno o más
+\hyperlink{CUARTO}{cuartos}.}
+\end{cdtEntidad}
+
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{ACCESO}{Acceso}
+	\brAttr{ID_CLIENTES_CLIENTE}{ID Cliente}{ID}
+		{ID del cliente al que corresponden las credenciales.}{Sí}
+	\brAttr{CONTRASENA}{Contraseña}{Cadena corta}
+		{Contraseña para accesar al perfil.}{Sí}
+	\brAttr{COREO_ELECTRONICO_PRIMARIO}{Correo electrónico primario}{Correo}
+		{Correo principal con el que se identifica el cliente.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelComposition}{ID Cliente}{Un \hyperlink{Alumno}{ID} reside en un \hyperlink{Domicilio}{Domicilio}.}	
+	\brRel{\brRelAgregation}{Grupo}{Un \hyperlink{Alumno}{Alumno} toma un \hyperlink{Curso}{Curso}.}	
+\end{cdtEntidad}
+
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+\begin{cdtEntidad}{CLIENTES}{Alumno Extranjero}%{}
+	\brAttr{numeroResidente}{Numero de residente}{Id}{Número de registro dado por la Secretaría de Relaciones Exteriores a los extranjeros.}{Si}
+	\brAttr{paisOrigen}{Pais origen}{\hyperlink{Pais}{País}}
+		{País de origen del alumno extranjero.}{Sí}
+	\cdtEntityRelSection
+	\brRel{\brRelAgregation}{País}{Un \hyperlink{Alumno}{Alumno} es originario de un \hyperlink{Pais}{Pais}}	
+	\brRel{\brRelGeneralization}{Alumno}{Un \hyperlink{AlumnoExtranjero}{Alumno Extranjero} es un  \hyperlink{Alumno}{Alumno}}	
+	\brRel{\brRelParticipation}{Alumno}{Un \hyperlink{AlumnoExtranjero}{Alumno Extranjero} es un  \hyperlink{Alumno}{Alumno}}	
+\end{cdtEntidad}
+
+%---------------------------------------------------------
+\section{Modelado de Reglas de negocio}
+
+
+\input{3-1-reglas}
+
+
+\section{Máquinas de estado}
+
+\input{3-2-estados.tex}
+
+%---------------------------------------------------------
+\section{Modelo de Procesos AS-IS}
+
+\cdtInstrucciones{En esta seccion describa todos los procesos tal cual son antesd e desarrollar el proyecto.}
+
+En esta sección se describen los procesos a mejorar con el sistema. En la figura~\ref{fig:mapaProc} se muestra el mapa de procesos y se indican los proceso afectados por el sistema.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{images/mapaProc}
+		\caption{Mapa de procesos actual.}
+		\label{fig:mapaProc}
+	\end{center}
+\end{figure}
+
+\input{proc/proc01.tex}
+%\input{proc/proc02.tex}
+%\input{proc/proc03.tex}
+%\input{proc/proc04.tex}
+
+%---------------------------------------------------------
+\section{Modelo de procesos TO-BE}
+
+\cdtInstrucciones{En esta seccion describa todos los procesos modificados una vez que se adopte el sistema.}
+
+Los nuevos procesos se presentan en esta sección, el mapa de procesos de la figura~\ref{fig:mapaProcNvo} se muestra el mapa de procesos actualizado.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{images/mapaProc}
+		\caption{Mapa de procesos actualizado}
+		\label{fig:mapaProcNvo}
+	\end{center}
+\end{figure}
+
+
+\input{proc/proc-m01.tex}
+%\input{proc/proc-m02.tex}
+%\input{proc/proc-m03.tex}
+%\input{proc/proc-m04.tex}
+

@@ -1,0 +1,178 @@
+%!TEX root = ../proyecto.tex
+
+% Plantilla para caso de uso sencillo con ejemplos de comandos e intrucciones.
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+%--------------------------------------
+\begin{UseCase}{CU2}{Registrar Reservación}{
+		Cuando un cliente quiere realizar una reservación en hotel, debe registrar sus datos de reservación, una vez registrados se creara la reservación y se mostraran los detalles de la misma.
+	}
+	\UCitem{Versión}{\color{Gray}
+		0.3	% Ponga un número de versión, 
+	}\UCitem{Autor}{\color{Gray}
+		Hernández Jiménez Erick Yael. % Analista responsable de especificar el CU
+	}\UCitem{Supervisa}{\color{Gray}
+		Ruiz Evaristo Marco Antonio. % Analista responsable de verificar que está correcto.
+		% TODO: Dar de alta al actor Usuario
+	}\UCitem{Actor}{
+		\hyperlink{Cliente}{Cliente}% No olvide dar de alta el actor.
+	}\UCitem{Propósito}{\begin{Titemize}%Indique los fines, objetivos, propósitos o valores agregados del Caso de uso.
+		\Titem Proporcionar a los clientes un medio conveniente para realizar reservaciones para sus mascotas, permitiendo planificar sus necesidades de cuidado con anticipación.
+		\Titem Gestionar la disponibilidad de las reservaciones, evitando conflictos y asegurando que los recursos estén bien distribuidos.
+		\Titem Asegurar que todos los datos relevantes se ingresen de manera correcta y completa para el uso efectivo de los servicios.
+		\Titem Ofrecer un medio para enviar recordatorios al cliente sobre las reservas próximas, reduciendo así el riesgo de cancelaciones tardías o ausencias.
+		\end{Titemize}
+	}\UCitem{Entradas}{\begin{Titemize}
+			\Titem \hyperlink{SUCURSAL.NOMBRE_SUCURSAL}{Sucursal}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-IN}{Check-in}
+			\Titem \hyperlink{HOSPEDAJES.CHECK-OUT}{Check-out}.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{Especies} de las mascotas a hospedar.
+			\Titem \hyperlink{RAZA.NOMBRE_RAZA}{Razas} de las mascotas a hospedar.
+			\Titem Número de mascotas de la misma raza que el cliente desea hospedar.
+			\Titem \hyperlink{TAMANOS.TAMANO}{Tamaños} de las mascotas a hospedar.
+			\Titem \hyperlink{CATALOGO_CUARTOS.NOMBRE_CUARTO}{Nombre de los cuartos} que desea reservar el cliente.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.NOMBRE_SERVICIO}{Nombre de los servicios} que desea adquirir para la mascota el cliente.
+		\end{Titemize}
+	}\UCitem{Origen}{\begin{Titemize}
+			\Titem \hyperlink{SUCURSAL.NOMBRE_SUCURSAL}{Sucursal}: Menú desplegable en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-IN}{Check-in}: Selector de fechas en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-OUT}{check-out}: Selector de fechas en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{Especies}: Menú desplegable en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{RAZA.NOMBRE_RAZA}{Razas}: Menú desplegable en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{TAMANOS.TAMANO}{Tamaños}: Menú desplegable en la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem \hyperlink{CATALOGO_CUARTOS.NOMBRE_CUARTO}{Nombre de los cuartos}: Botones de selección en la pantalla \IUref{IU7}{Catálogo de habitaciones}.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.NOMBRE_SERVICIO}{Nombre de servicios}: Menú desplegable en la pantalla \IUref{IU9}{Servicios adicionales}.
+		\end{Titemize}
+	}\UCitem{Salidas}{\begin{Titemize}
+			\Titem \hyperlink{SUCURSAL.NOMBRE_SUCURSAL}{Sucursal}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-IN}{Check-in}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-OUT}{Check-out}.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{Especies} de las mascotas a hospedar.
+			\Titem \hyperlink{RAZA.NOMBRE_RAZA}{Razas} de las mascotas a hospedar.
+			\Titem \hyperlink{TAMANOS.TAMANO}{Tamaños} de las mascotas a hospedar.
+			\Titem \hyperlink{CATALOGO_CUARTOS.NOMBRE_CUARTO}{Nombre de los cuartos} que desea reservar el cliente.
+			\Titem \hyperlink{CATALOGO_CUARTOS.PRECIO_CUARTO}{Precio del los cuartos} que desea reservar el cliente.
+			\Titem \hyperlink{SUCURSALES.CALLE_DIRECCION}{Calle} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{SUCURSALES.NUMERO_DIRECCION}{Número de calle} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{SUCURSALES.NOMBRE_COLONIA_DIRECCION}{Colonia} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{SUCURSALES.NOMBRE_MUNICIPIO_DIRECCION}{Municipio} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{SUCURSALES.CODIGO_POSTAL_DIRECCION}{Código postal} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{SUCURSALES.ENTIDAD_DIRECCION}{Entidad} de la sucursal en la que reserva el cliente.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.NOMBRE_SERVICIO}{Nombre de los servicios} que desea adquirir para la mascota el cliente.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.COSTO_BASE}{Costo base de los servicios} que desea adquirir para la mascota el cliente.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.COSTO_EXTRA}{Costo extra de los servicios} que desea adquirir para la mascota el cliente en caso de presentarse la necesidad de servicios emergentes.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_PRECIO_CUARTOS}{Total de los cuartos} que contrata el cliente.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_PRECIO_CITAS_SERVICIOS}{Total de los servicios} que contrata el cliente.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_TOTAL_HOSPEDAJE}{Suma total por el hospedaje} que contrata el cliente.
+		\end{Titemize}
+	}\UCitem{Destino}{\begin{Titemize}
+			\Titem \hyperlink{SUCURSAL.NOMBRE_SUCURSAL}{Sucursal}: En la pantalla  \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-IN}{Check-in}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{HOSPEDAJES.CHECK-OUT}{check-out}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{Especies}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{RAZA.NOMBRE_RAZA}{Razas}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{TAMANOS.TAMANO}{Tamaños}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{CATALOGO_CUARTOS.NOMBRE_CUARTO}{Nombre de los cuartos}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{CATALOGO_CUARTOS.PRECIO_CUARTO}{Precio de los cuartos}: En la pantalla \IUref{IU7}{Catálogo de habitaciones} y \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.CALLE_DIRECCION}{Calle}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.NUMERO_DIRECCION}{Número de calle}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.NOMBRE_COLONIA_DIRECCION}{Colonia}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.NOMBRE_MUNICIPIO_DIRECCION}{Municipio}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.CODIGO_POSTAL_DIRECCION}{Código postal}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{SUCURSALES.ENTIDAD_DIRECCION}{Entidad}: En un mapa en la pantalla \IUref{IU8}{Vista general del cuarto}.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.NOMBRE_SERVICIO}{Nombre de los servicios}: En la pantalla \IUref{IU9}{Servicios adicionales}.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.COSTO_BASE}{Costo base de los servicios}: En la pantalla \IUref{IU9}{Servicios adicionales}.
+			\Titem \hyperlink{CATALOGO_SERVICIOS.COSTO_EXTRA}{Costo extra de los servicios}: En la pantalla \IUref{IU9}{Servicios adicionales}.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_PRECIO_CUARTOS}{Total de los cuartos}: En la pantalla \IUref{IU9}{Servicios adicionales} y en la pantalla \IUref{IU11}{Resumen del hospedaje}.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_PRECIO_CITAS_SERVICIOS}{Total de los servicios}: En la pantalla \IUref{IU9}{Servicios adicionales} y en la pantalla \IUref{IU11}{Resumen del hospedaje}.
+			\Titem \hyperlink{CORTE_HOSPEDAJES.SUMA_TOTAL_HOSPEDAJE}{Suma total por el hospedaje}: En la pantalla \IUref{IU9}{Servicios adicionales} y en la pantalla \IUref{IU11}{Resumen del hospedaje}.
+		\end{Titemize}
+	}\UCitem{Precondiciones}{\begin{Titemize}
+			% Incluya Precondiciones lógicas, de negocio e incluso las que debe atender el usuario. 
+			\Titem Debe haber al menos un cuarto en al menos una sucursal.
+			\Titem El cliente debe acceder al sistema por el caso de uso \UCref{CUX}{Iniciar Sesion} o \UCref{CU1}{Registrar Cliente}.
+			\Titem Debe haber disponibilidad de habitaciones en las fechas deseadas.
+		\end{Titemize}
+	}\UCitem{Postcondiciones}{\begin{Titemize}
+			\Titem Habrá una nueva reservación registrada para este cliente en el sistema.
+			\Titem El calendario de disponibilidad se ha actualizado para reflejar las fechas reservadas.
+			\Titem El cliente ha recibido una confirmación de la reservación a traves de la pantalla \IUref{IU5}{Home Cliente} y de un correo electrónico.
+			\Titem Se habilitará el botón \IUbutton{Mascotas} en la pantalla \IUref{IU5}{Home Cliente}
+			\Titem Todas las mascotas que el cliente haya asociado a la reservación serán accesibles para el cliente en la pantalla \IUref{IUX}{Consultar mascotas propias}.
+		\end{Titemize}
+	}\UCitem{Errores}{\begin{Titemize}
+			\Titem {\bf \hypertarget{CU2.E1}{E1}}: Cuando el cliente no haya iniciado sesión en el sistema, se le indica que es \MSGref{MSG-013}{Necesario iniciar sesión} y dirige al cliente al caso de uso \IUref{CU1}.
+			\Titem {\bf \hypertarget{CU2.E2}{E2}}: Cuando el cliente no haya ingresado los datos mínimos necesarios para la operación, se le muestra el mensaje  \MSGref{MSG-001}{Campo obligatorio} y regresa al paso anterior.
+			\Titem {\bf \hypertarget{CU2.E3}{E3}}: Cuando el cliente ingrese un tipo de dato diferente al solicitado, el sistema muestra el mensaje \MSGref{MSG-007}{Dato no válido} y regresa dos pasos antes.
+			\Titem {\bf \hypertarget{CU2.E4}{E4}}: Cuando no haya cuartos en el periodo indicado con las características que el cliente solicita, el sistema muestra el mensaje \MSGref{MSG-008}{Fecha no disponible} y dirige al cliente a la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+			\Titem {\bf \hypertarget{CU2.E5}{E5}}: Cuando el cliente solicite la información de un cuarto al que no se puede acceder, el sistema muestra el mensaje \MSGref{MSG-014}{Detalles del cuarto no disponibles} y actualiza la pantalla \IUref{IU7}{Catálogo de habitaciones}.
+			\Titem {\bf \hypertarget{CU2.E6}{E6}}: Cuando no haya disponibilidad de servicios extra en el periodo indicado con las características que el cliente solicita, el sistema muestra el mensaje \MSGref{MSG-015}{Servicios no disponibles}.
+		\end{Titemize}
+	}\UCitem{Tipo}{
+		Caso de uso primario
+	}\UCitem{Observaciones}{
+		Se considera que la disponibilidad de habitaciones y servicios no cambia durante la realización del registro de reservación.
+	}
+\end{UseCase}
+
+%--------------------------------------
+\begin{UCtrayectoria}
+	\UCpaso[] El cliente selecciona  el botón \IUbutton{Realizar reservación} de la pantalla \IUref{IU5}{Home Cliente}.
+	\UCpaso[] El sistema verifica que el cliente ya se encuentre ingresado en el sistema con un perfil de usuario \ErrorRef{CU2}{E1}{Necesario iniciar sesión}.
+	\UCpaso[] El sistema solicita los datos para buscar cuartos que sean de interés para cliente mediante la pantalla \IUref{IU6}{Búsqueda de hospedajes}.
+	\UCpaso[] El cliente introduce los datos para buscar cuartos en la sucursal de su preferencia y selecciona el botón \IUbutton{Buscar}.
+	\UCpaso[] El sistema verifica que se hayan introducido todos los datos necesarios para la búsqueda \ErrorRef{CU2}{E2}{Campo obligatorio}.
+	\UCpaso[] El sistema verifica que se hayan introducido datos válidos para la búsqueda \ErrorRef{CU2}{E3}{Dato no válido}.
+	\UCpaso[] El sistema verifica que se haya cuartos disponibles en el periodo y con todas las características solicitadas \ErrorRef{CU2}{E4}{Fecha no disponible}.
+	\UCpaso[] \label{muestra_catalogo}El sistema muestra todos los cuartos que cumplan con los requisitos deseados, mostrando el mensaje \MSGref{MSG-016}{Cuartos para mascotas} en la pantalla \IUref{IU7}{Catálogo de habitaciones}.
+	\UCpaso[] El cliente selecciona el botón \IUbutton{Seleccionar} correspondiente al cuarto de interés en la pantalla \IUref{IU7}{Catálogo de habitaciones}.
+	\UCpaso[] El sistema verifica que se puedan acceder a los datos del cuarto de interés \ErrorRef{CU2}{E5}{Detalles de cuarto no disponibles} y dirige al cliente a la pantalla \IUref{IU8}{Vista general del cuarto}.
+	\UCpaso[] El cliente ingresa el número de mascotas de la misma raza y tamaño que desea asociar al mismo cuarto.
+	\UCpaso[] El sistema verifica que se hayan introducido todos los datos necesarios para la reservación \ErrorRef{CU2}{E2}{Campo obligatorio}.
+	\UCpaso[] El sistema verifica que se hayan introducido datos válidos para la reservación\ErrorRef{CU2}{E3}{Dato no válido}.
+	\UCpaso[] Se repite desde el paso \hyperlink{muestra_catalogo}{7} hasta haber reservado para todas las mascotas que haya introducido el cliente inicialmente.
+	\UCpaso[] El sistema dirige al cliente a la pantalla \IUref{IU9}{Servicios adicionales} con los campos necesarios para agregar cita a tantas mascotas como haya indicado inicialmente y desee mientras haya servicios disponibles \ErrorRef{CU2}{E6}{Servicios no disponibles}.
+	\UCpaso[] El cliente indica al sistema cuántos y qué servicios desea contratar, actualizando los costos totales en la pantalla tras cada modificación.
+	\UCpaso[] El cliente indica al sistema que desea completar su reservación con el botón \IUbutton{Reservar}.
+	\UCpaso[] \label{CU3_Reg_mascota}El sistema ofrece al cliente la posibilidad de dar más detalles de sus mascotas asociadas a la reservación \IUref{CU3}{Registrar Mascota} mediante la pantalla \IUref{IU10}{Registrar más detalles}.
+	\UCpaso[] El sistema dirige al cliente a la pantalla de \IUref{IU11}{Resumen del hospedaje}.
+	\UCpaso[] El cliente indica que desea proceder al pago con el botón \IUbutton{Pagar}.
+	\UCpaso[] \label{CU2_Reg_pago}El sistema muestra la pantalla \IUref{IU5}{Registrar Pago}.
+	\UCpaso[] El sistema registra la reservación y muestra la pantalla \IUref{IU5}{Home Cliente} con los detalles de la reservación.
+
+
+	
+\end{UCtrayectoria}
+
+
+%--------------------------------------
+% Las trayectorias alternativas se identifican con Letras: A, B, C, etc.
+
+%--------------------------------------
+% Puntos de extensión
+
+% Comente la siguiente sección en caso de que no hayan puntos de extensión o relaciones de tipo extends.
+\subsection{Puntos de extensión}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+	El cliente quiere agregar detalles de su mascota asociada a su reservación.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	En el paso \ref{CU2_Reg_mascota}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CU3}{Resgistrar Mascota}.
+}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+	El cliente quiere pagar  o consultar el costo de la reservación.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	En el paso \ref{CU2_Reg_mascota}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CUZ}{Resgistrar Pago}.
+}
+
+%-------------------------------------- TERMINA descripción del caso de uso.

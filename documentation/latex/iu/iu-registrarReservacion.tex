@@ -1,0 +1,39 @@
+% !TeX root = ../proyecto.tex
+%--------------------------------------
+\section{IU4 Pantalla de Datos de la Reservacion}
+
+\subsection{Objetivo}
+	\cdtInstrucciones El objetivo de esta pantalla es permitir al usuario capturar los datos de la reservacion y asi poder llevar acabo la reservacion.
+
+\subsection{Diseño}
+	\cdtInstrucciones Esta pantalla \IUref{UI4}{Pantalla de Datos de la Reservacion} aparece al momento de querer hacer una reservacion,despues de haber llenado los datos extra de la mascota, para ingresar los datos de la reservacion basta con llenar la informacion desde teclado o mouse, podemos agregar un servicio en el boton \IUbutton{Agregar Servicio}, una vez llenados todos los datos de reservacion, aparecera el precio de nuestra reservacion, damos click en el boton \IUbutton{Reservar} para hacer la reserrvacion.
+
+\IUfig[.7]{registrarReservacion}{IU4}{Pantalla de Datos de la Reservacion}
+
+%\IUfig[ancho de la figura: valor entre 1 y .1]{Nombre corto de la pantalla sin espacions ni acentos}{IUXX}{Nombre largo de la pantalla.}
+
+\subsection{Salidas}
+
+	%\cdtInstrucciones{Liste las salidas de la interfaz. Si coinciden con las del caso de uso solo indiquelo. Esta ,ista debe incluir los mensajes}
+
+	\begin{itemize}
+		\item Si los datos de esta pantalla no son llenados, al momento de dar click en el boton \IUbutton{Reservar}, saltara el mensaje \MSGref{MSG-001}{Campo obligatorio}.
+	\end{itemize}
+	
+\subsection{Entradas}
+
+	%\cdtInstrucciones{Liste las entradas de la interfaz. Si coinciden con las del caso de uso solo indiquelo.}
+	\begin{itemize}
+		\item Fecha de entrada.
+		\item Fecha de salida.
+		\item sucursal
+	\end{itemize}
+
+\subsection{Comandos}
+	%\cdtInstrucciones{Describa cada control (botónes, areas de drag and drop, componentes interactivos, animaciones, etc.) que se puede utilizar dentro de la pantalla indicando o que hacen y si cambia de pantalla.}
+
+\begin{itemize}
+	\item \IUbutton{Agregar Servicio}: Muestra los servicios con los que cuenta el hotel \IUref{IU10}{Pantalla de Servicios}. Si se agrega algun servicio este se agregara al precio de la reservacion.
+	\item \IUbutton{Reservar}: Verifica que los datos hayan sido llenados. Si la verificación es correcta, se muestra la \IUref{UI5}{Pantalla Home Cliente} y aparece la reservacion.
+\end{itemize}
+

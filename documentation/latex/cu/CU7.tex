@@ -1,0 +1,139 @@
+%!TEX root = ../proyecto.tex
+
+% Plantilla para caso de uso sencillo con ejemplos de comandos e intrucciones.
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+%--------------------------------------
+\begin{UseCase}{CU7}{Alta de servicio}{
+	Cuando el cliente desée agregar servicios adicionales al hospedaje de su mascota, deberá ingresar a la pantalla de "Agregar servicio" mediante el botón homónomo en la pantalla de reservación. Una vez dentro, podrá introducir los datos del servicio que desee agregar.
+}
+	\UCitem{Versión}{\color{Gray}
+		0.1
+	}\UCitem{Autor}{\color{Gray}
+		Hernández Jiménez Erick Yael.
+	}\UCitem{Supervisa}{\color{Gray}
+		Ruiz Evaristo Marco Antonio.
+	}\UCitem{Cliente}{
+		\hyperlink{Cliente}{Cliente} 
+	}\UCitem{Propósito}{\begin{Titemize}
+		\Titem Que el cliente pueda contratar servicios para la mascota antes del hospedaje 
+	\end{Titemize}
+	}\UCitem{Entradas}{\begin{Titemize}
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Nombre del servicio}.
+		\Titem \hyperlink{CITA.Fecha}{Fecha del servicio}.
+		\Titem \hyperlink{EMPLEADO.Nombres}{Nombres}.
+		\Titem \hyperlink{EMPLEADO.Primer_apellido}{Primer apellido}.
+		\Titem \hyperlink{EMPLEADO.Segundo_apellido}{Segundo apellido}.
+		\end{Titemize}
+	}\UCitem{Origen}{\begin{Titemize}
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Nombre del servicio}: Seleccionado con el mouse desde un menú desplegable.
+		\Titem \hyperlink{CITA.Fecha}{Fecha del servicio}: Seleccionado con el mouse desde el campo de selección.
+		\Titem \hyperlink{EMPLEADO.Nombres}{Nombres}: Seleccionado con el mouse desde un menú desplegable.
+		\Titem \hyperlink{EMPLEADO.Primer_apellido}{Primer apellido}: Seleccionado con el mouse desde un menú desplegable.
+		\Titem \hyperlink{EMPLEADO.Segundo_apellido}{Segundo apellido}: Seleccionado con el mouse desde un menú desplegable.
+	\end{Titemize}
+	}\UCitem{Salidas}{\begin{Titemize}
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Nombre del servicio}.
+		\Titem \hyperlink{CITA.Fecha}{Fecha del servicio}.
+		\Titem \hyperlink{HOSPEDAJE.ID_Reservacion}{ID hospedaje}.
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Costo_base}{Costo del servicio}.
+		\Titem \hyperlink{EMPLEADO.Nombres}{Nombres}.
+		\Titem \hyperlink{EMPLEADO.Primer_apellido}{Primer apellido}.
+		\Titem \hyperlink{EMPLEADO.Segundo_apellido}{Segundo apellido}.
+		\Titem \hyperlink{CITAS.ID_Cita}{ID de la cita}.
+		\Titem Mensajes de error.
+	\end{Titemize}
+	}\UCitem{Destino}{\begin{Titemize}
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Nombre del servicio}: Se muestra en la pantalla \IUref{IUX}{Reservación} y en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{CITA.Fecha}{Fecha del servicio}: Se muestra en la pantalla \IUref{IUX}{Reservación} y en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{HOSPEDAJE.ID_Reservacion}{ID hospedaje}: Se muestra en la pantalla \IUref{IUX}{Reservación}.
+		\Titem \hyperlink{CATALOGO_SERVICIOS.Costo_base}{Costo del servicio}: Se muestra en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{EMPLEADO.Nombres}{Nombres}: Se muestra en la pantalla \IUref{IUX}{Reservación} y en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{EMPLEADO.Primer_apellido}{Primer apellido}: Se muestra en la pantalla \IUref{IUX}{Reservación} y en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{EMPLEADO.Segundo_apellido}{Segundo apellido}: Se muestra en la pantalla \IUref{IUX}{Reservación} y en la pantalla \IUref{IU7}{Alta de servicio}.
+		\Titem \hyperlink{CITAS.ID_Cita}{ID de la cita}: Se muestra en la pantalla \IUref{IUX}{Reservación}.
+	\end{Titemize}
+	}\UCitem{Precondiciones}{\begin{Titemize}
+		\Titem El cliente deberá llenar con anterioridad los datos de su reservación en las pantallas correspondientes.
+	\end{Titemize}
+	}\UCitem{Postcondiciones}{\begin{Titemize}
+		\Titem Se le asignará la cita al responsable de servicio.
+		\Titem Se registrará la cita al hospedaje de la mascota.
+	\end{Titemize}
+	}\UCitem{Errores}{\begin{Titemize}
+		\Titem {\bf \hypertarget{CU7.E1}{E1}}: El cliente no ha rellenado los campos necesarios para la reservación. 
+		\Titem {\bf \hypertarget{CU7.E2}{E2}}: No existe el servicio en la sucursal solicitada. 
+		\Titem {\bf \hypertarget{CU7.E3}{E3}}: El cliente solicita el servicio para una fecha fuera del lapso de la estancia del cliente.
+		\Titem {\bf \hypertarget{CU7.E4}{E4}}: No hay responsables disponibles en la fecha solicitada. 
+		\Titem {\bf \hypertarget{CU7.E5}{E5}}: El responsable de servicio no tiene disponibilidad para la fecha asignada.
+	\end{Titemize}
+	}\UCitem{Tipo}{
+		Viene de \hyperlink{CUY}{CUY Reservación}.
+	}\UCitem{Observaciones}{\begin{Titemize}
+		\Titem Se hace la suposición de que la única etapa para cambiar citas de servicios es antes de la fecha del hospedaje.
+		\Titem Se hace la consideración de que la disponibilidad de los responsables no varía durante el tiempo de agendado.
+	\end{Titemize}
+	}
+\end{UseCase}
+
+%--------------------------------------
+\begin{UCtrayectoria}
+	\UCpaso[] El cliente indica al sistema que desea registrar un servicio adicional para el hospedaje de su mascota con el botón \IUbutton{Agregar servicio} desde la pantalla \IUref{IUX}{Reservación}.
+	\UCpaso[] \label{UC7.IntroduceDatosCita} El sistema solicita los datos \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Servicio} y \hyperlink{CITA.Fecha}{Fecha del servicio} para contratar desde la pantalla \IUref{IU2}{Agregar servicio}.
+	\UCpaso[] El cliente solicita al sistema buscar a los responsable del servicio solicitado disponibles con el botón \IUbutton{Checar disponibilidad}.
+	\UCpaso[] El sistema verifica que el cliente haya llenado los campos  correspondientes a \hyperlink{CATALOGO_SERVICIOS.Nombre_servicio}{Nombre del servicio} y \hyperlink{CITA.Fecha}{Fecha del servicio} \ErrorRef{CU7}{E1}{No se han llenado los datos necesarios para realizar la cita} \Trayref{CU7}{A}.
+	\UCpaso[] El sistema verifica que el servicio exista en la sucursal en la que se agenda \ErrorRef{CU7}{E2}{No existe este servicio en la sucursal} \Trayref{CU7}{B}.
+	\UCpaso[] El sistema verifica que la fecha de la cita corresponda al lapso de la estancia \ErrorRef{CU7}{E4}{Fecha solicitada no válida} \Trayref{CU7}{C}.
+	\UCpaso[] El sistema verifica que exista responsables disponibles en la fecha que se agenda \ErrorRef{CU7}{E5}{No hay responsables disponibles para el servicio solicitado} \Trayref{CU7}{D}.
+	\UCpaso[] El sistema actualiza el menú desplegable de responsables de servicio en la pantalla \IUref{IUX}{Reservación} y el precio del servicio que selecciona.
+	\UCpaso[] \label{UC7.IntroduceResponsableServicio} El cliente deja vacío el campo o selecciona al responsable de servicio que desea \Trayref{CU7}{E}
+	\UCpaso[] El cliente solicita al sistema que le asigne un responsable de servicio mediante el botón \IUbutton{Agendar cita}.
+	\UCpaso[] El sistema asigna un responsable de servicio disponible.
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IUX}{Reservación} con los datos de salida mostrados en el espacio correspondiente y el mensaje \MSGref{MSG-001}{Cita reservada con éxito}.
+	\UCpaso[] El sistema habilita los botones \IUbutton{Cambiar servicio} y \IUbutton{Eliminar servicio} en la pantalla \IUref{IUX}{Reservación}.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{CU7}{A}{El cliente no ha llenado los datos necesarios para realizar la cita}
+	\UCpaso El sistema le indica al cliente que faltan campos por llenar para contratar el servicio solicitado mediante el mensaje \MSGref{MSG-00X}{No se han rellenado los datos necesarios para contratar un servicio adicional}.
+	\UCpaso El sistema regresa al cliente al paso \ref{UC7.IntroduceDatos}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU7}{B}{El cliente solicita un servicio que no existe en la sucursal}
+	\UCpaso El sistema le indica al cliente que no existe el servicio en la sucursal solicitada mediante el mensaje \MSGref{MSG-00X}{No hay responsables para este servicio en esta sucursal}.
+	\UCpaso El sistema regresa al cliente al paso \ref{UC7.IntroduceDatos}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU7}{C}{El cliente introduce una fecha para la cita fuera del lapso de la estancia para la que reserva}
+	\UCpaso El sistema le indica al cliente que la fecha de la cita es solicitada fuera del periodo de estancia en el hotel mediante el mensaje \MSGref{MSG-00X}{La fecha solicitada no corresponde al tiempo de la estancia, seleccione otra fecha}.
+	\UCpaso El sistema regresa al cliente al paso \ref{UC7.IntroduceDatos}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU7}{D}{El cliente solicita un servicio en el cual no hay responsables disponible}
+	\UCpaso El sistema le indica al cliente que no hay responsables para el servicio extra solicitado mediante el mensaje \MSGref{MSG-00X}{No hay responsables disponibles para el servicio solicitado}.
+	\UCpaso El sistema regresa al cliente al paso \ref{UC7.IntroduceDatos}.
+\end{UCtrayectoriaA}
+\begin{UCtrayectoriaA}{CU7}{E}{El cliente selecciona algún responsable de servicio en el menú desplegable}
+	\UCpaso[] El cliente solicita al sistema agendar su cita con el responsable marcado que le asigne uno mediante el botón \IUbutton{Agendar cita}.
+	\UCpaso[] El sistema redirige al cliente a la pantalla \IUref{IUX}{Reservación} con los datos de salida mostrados en el espacio correspondiente y el mensaje \MSGref{MSG-001}{Cita reservada con éxito}.
+	\UCpaso[] El sistema habilita los botones \IUbutton{Cambiar servicio} y \IUbutton{Eliminar servicio} en la pantalla \IUref{IUX}{Reservación}.
+\end{UCtrayectoriaA}
+
+
+
+%--------------------------------------
+% Puntos de extensión
+
+% Comente la siguiente sección en caso de que no hayan puntos de extensión o relaciones de tipo extends.
+\subsection{Puntos de extensión}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+	El usuario no recuerda cual es su contraseña o sospecha que su usuario está bloqueado.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	Del paso \ref{CUX.etiqueta} al paso \ref{CUX.etiqueta}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CUZ}{Nombre del caso de uso}.
+}
+		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

@@ -1,0 +1,8 @@
+
+# Archivos de salida de compilación de TeX #
+############################################
+*.aux
+*.log
+*.lot
+*.out
+*.toc
