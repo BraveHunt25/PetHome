@@ -1,31 +1,41 @@
-/*
- * Este archivo incluye la aplicación en React con las rutas que verán los clientes.
- * También se incluye la barra de navegación.
+/**
+ * Creación del frontend para las páginas que visualizará el cliente
  */
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
+import { AuthProvider } from "./context/authContext";
+import { ProtectedRoute } from "./routes";
 
-import HomePage from './pages/HomePage';
-import NotFound from './pages/NotFound';
-import FormularioMascota from './pages/FormularioMascotas';
-import FormularioEspecies from './pages/FormularioEspecies';
-import FormularioRazas from './pages/FormularioRazas';
-import ConsultaMascotas from './pages/ConsultaMascotas';
-import Navbar from './components/Navbar';
+import HomePage from "./pages/HomePage";
+import RegisterPage from "./pages/RegisterPage";
+import { TaskFormPage } from "./pages/TaskFormPage";
+import { LoginPage } from "./pages/LoginPage";
+import { TasksPage } from "./pages/TasksPage";
+import { TaskProvider } from "./context/tasksContext";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/RegistrarEspecie' element={<FormularioEspecies />} />
-        <Route path='/RegistrarRaza' element={<FormularioRazas />} />
-        <Route path='/RegistrarMascota' element={<FormularioMascota />} />
-        <Route path='/ConsultarMascotas' element={<ConsultaMascotas />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </>
-  )
+    <AuthProvider>
+      <TaskProvider>
+        <BrowserRouter>
+          <main className="bg-[#fed7aa] container content-container mx-auto px-10 md:px-0">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="/tasks" element={<TasksPage />} />
+                <Route path="/add-task" element={<TaskFormPage />} />
+                <Route path="/tasks/:id" element={<TaskFormPage />} />
+                <Route path="/profile" element={<h1>Profile</h1>} />
+              </Route>
+            </Routes>
+          </main>
+        </BrowserRouter>
+      </TaskProvider>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

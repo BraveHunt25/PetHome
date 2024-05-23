@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %!TEX root = ../proyecto.tex
 
 % Plantilla para caso de uso sencillo con ejemplos de comandos e intrucciones.
@@ -25,20 +26,21 @@
 		\end{Titemize}
 	}\UCitem{Entradas}{\begin{Titemize}
 			% TODO: Dar de alta las entidades que se listan.
-			\Titem \hyperlink{mascota.nombre}{Nombre} de la mascota. % El identificador no acepta acentos, espacios ni eñes.
-			\Titem \hyperlink{mascota.tamano}{Tamaño} de la mascota. % Liste todos los datos de entrada
-			\Titem \hyperlink{mascota.fechaNacimiento}{Fecha de nacimiento} de la mascota. 
-			\Titem \hyperlink{mascota.CRUAC}{CRUAC} de la mascota.
-			\Titem \hyperlink{mascota.especie}{especie} de la mascota.
-			\Titem \hyperlink{mascota.raza}{raza} de la mascota.
-			\Titem \hyperlink{mascota.foto}{fotografia} de la mascota.
+			\Titem \hyperlink{MASCOTA.NOMBRE_MASCOTA}{Nombre} de la mascota. % El identificador no acepta acentos, espacios ni eñes.
+			\Titem \hyperlink{MASCOTA.ID_TAMANO}{Tamaño} de la mascota. % Liste todos los datos de entrada
+			\Titem \hyperlink{MASCOTA.FECHA_NACIMIENTO}{Fecha de nacimiento} de la mascota. 
+			\Titem \hyperlink{MASCOTA.CRUAC}{CRUAC} de la mascota.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{especie} de la mascota.
+			\Titem \hyperlink{MASCOTA.NOMBRE_RAZA}{raza} de la mascota.
+			\Titem \hyperlink{MASCOTA.FOTOGRAFIA}{fotografia} de la mascota.
+			\Titem \hyperlink{MASCOTA.COLOR}{Color} de la mascota.
 			\Titem \hyperlink{mascota.tipoVacuna}{Tipo de vacuna}.
 			\Titem \hyperlink{mascota.nombreVacuna}{Nombre de la vacuna}.
 			\Titem \hyperlink{mascota.fechaAplicacion}{Ultima fecha de aplicación}.
 			\Titem \hyperlink{mascota.dosis}{Numero de dosis aplicadas}.
 			\Titem \hyperlink{mascota.alergias}{Alergias} de la mascota.
 			\Titem \hyperlink{mascota.tratamientoMedico}{Tratamiento Medico}.
-			\Titem \hyperlink{mascota.caracteristicasEspeciales}{Caracteristicas Especiales} fisicas o de comportamiento.
+			\Titem \hyperlink{MASCOTA.CONDICIONES_CONDUCTUALES}{Caracteristicas Especiales} fisicas o de comportamiento.
 		\end{Titemize}
 	}\UCitem{Origen}{\begin{Titemize}
 			\Titem Se introducen desde el teclado. % Indique por que medio se introducen los datos, 
@@ -212,4 +214,220 @@ El cliente quiere agregar un tratamiento medico a su mascota.
 
 
 
+=======
+%!TEX root = ../proyecto.tex
+
+% Plantilla para caso de uso sencillo con ejemplos de comandos e intrucciones.
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+%--------------------------------------
+\begin{UseCase}{CU3}{Registrar Mascota}{
+		Cuando un cliente quiere realizar una reservación en el hotel, debe dar de alta en el sistema los datos de su mascota, lo puede realizar mientras realiza su reservación o posterior a la reservación, una vez registrados se agilizara su llegada al hotel el día de su check-in.
+	}
+	\UCitem{Versión}{\color{Gray}
+		0.3	% Ponga un número de versión, 
+	}\UCitem{Autor}{\color{Gray}
+		Ruiz Evaristo Marco Antonio. % Analista responsable de especificar el CU
+	}\UCitem{Supervisa}{\color{Gray}
+		Hernández Jiménez Erick Yael. % Analista responsable de verificar que está correcto.
+		% TODO: Dar de alta al actor Usuario
+	}\UCitem{Actor}{
+		\hyperlink{Cliente}{Cliente}% No olvide dar de alta el actor.
+	}\UCitem{Propósito}{\begin{Titemize}%Indique los fines, objetivos, propósitos o valores agregados del Caso de uso.
+		\Titem Facilitar al cliente la reservación de manera eficiente, ofreciendo un proceso intuitivo y simplificado para satisfacer sus necesidades.
+		\Titem Asegurar que el cliente pueda registrar a su mascota durante o después de hacer la reservación, según lo prefiera, ofreciendo flexibilidad y conveniencia.
+		\Titem Garantizar la seguridad y privacidad de los datos de las mascotas, además de proporcionar un sistema confiable que soporte las necesidades de los clientes al manejar eficientemente sus requerimientos.
+		\Titem Almacenar los datos de las mascotas de forma segura para permitir reservaciones futuras, mejorando la experiencia del cliente al proporcionar un proceso de reservación más rápido y personalizado.
+		\end{Titemize}
+	}\UCitem{Entradas}{\begin{Titemize}
+			% TODO: Dar de alta las entidades que se listan.
+			\Titem \hyperlink{MASCOTA.NOMBRE_MASCOTA}{Nombre} de la mascota. % El identificador no acepta acentos, espacios ni eñes.
+			\Titem \hyperlink{MASCOTA.ID_TAMANO}{Tamaño} de la mascota. % Liste todos los datos de entrada
+			\Titem \hyperlink{MASCOTA.FECHA_NACIMIENTO}{Fecha de nacimiento} de la mascota. 
+			\Titem \hyperlink{MASCOTA.CRUAC}{CRUAC} de la mascota.
+			\Titem \hyperlink{ESPECIE.NOMBRE_ESPECIE}{especie} de la mascota.
+			\Titem \hyperlink{MASCOTA.NOMBRE_RAZA}{raza} de la mascota.
+			\Titem \hyperlink{MASCOTA.FOTOGRAFIA}{fotografia} de la mascota.
+			\Titem \hyperlink{CATALOGO_VACUNAS.ENFERMEDAD_A_TRATAR}{Tipo de vacuna}.
+			\Titem \hyperlink{MEDICAMENTO.NOMBRE_MEDICAMENTO}{Nombre de la vacuna}.
+			\Titem \hyperlink{CARTILLA_MASCOTAS.FECHA_ULTIMA_APLICACION}{Ultima fecha de aplicación}.
+			\Titem \hyperlink{mascota.dosis}{Numero de dosis aplicadas}.
+			\Titem \hyperlink{ALERGIA.OBJETO_ALERGIA}{Alergias} de la mascota.
+			\Titem \hyperlink{mascota.tratamientoMedico}{Tratamiento Medico}.
+			\Titem \hyperlink{MASCOTA.CONDICIONES_CONDUCTUALES}{Caracteristicas Especiales} fisicas o de comportamiento.
+		\end{Titemize}
+	}\UCitem{Origen}{\begin{Titemize}
+			\Titem Se introducen desde el teclado. % Indique por que medio se introducen los datos, 
+			\Titem Se seleccionan de un selector de fecha (calendario) con el mouse.
+			\Titem Se seleccionan de un catalogo con el mouse.
+			\Titem Se marca un checkbox con el mouse.
+		
+		\end{Titemize}
+	}\UCitem{Salidas}{\begin{Titemize}
+			% TODO: Dar de alta las entidades que se listan.
+			\Titem Mensajes de error. % Indique por que medio se introducen los datos
+			\Titem Datos de la mascota dentro de la lista de mascotas.
+			\Titem Los datos de la mascota se envian al registro de la reservación. 
+		\end{Titemize}
+	}\UCitem{Destino}{\begin{Titemize}
+			\Titem Se muestra en la pantalla \IUref{IU3}{Registrar Datos de la Mascota}.
+			\Titem Se muestra en la pantalla \IUref{IU2}{Registrar Mascota}. 
+			
+		\end{Titemize}
+	}\UCitem{Precondiciones}{\begin{Titemize}
+			% Incluya Precondiciones lógicas, de negocio e incluso las que debe atender el usuario. 
+			\Titem El cliente debe tener una cuenta	
+			\Titem No debe haber otra mascota registrada con el mismo RUAC.
+			\Titem La mascota debe contar con las vacunas solicitadas de acuerdo a \hyperlink{BR-002}{BR-002 Vacunas Obligatorias para la Mascota}
+			% Muchas precondiciones provienen de reglas de negocios, otras estarán asociadas a manejo de errores
+			% Otras están relacionadas con casos de uso que deben ejecutarse previamente, como registrar un producto.
+		\end{Titemize}
+	}\UCitem{Postcondiciones}{\begin{Titemize}
+			\Titem Habrá una nueva mascota resgitrada para ese cliente en el sistema.
+			\Titem La mascota aparecera en la lista de mascotas en la pantalla \IUref{IU2}{Registrar Mascota}.
+			\Titem El cliente podrá conservar los datos de la mascota registrada para reservaciones futuras.
+			\Titem El cliente podrá realizar reservaciones.
+			% Indique todas las postcondiciones
+			% por ejemplo, Cambios en el sistema
+			% Cambios en la BD una vez terminado el CU
+			% Efectos colaterales
+			% Condiciones de término.
+		\end{Titemize}
+	}\UCitem{Errores}{\begin{Titemize}
+			% Escriba todos los errores que puedan ocurrir en el sistema, para cada error recuerde:
+			% Punerle un identificador
+			% Describir la condición o escenario que detona el error
+			% Describa la forma en que debe reaccionar el sitema: si la reaccion corresponde a varios pasos use mejor una trayectoria alternativa.
+			% Relacione el error con la trayectoria principal.
+			\Titem {\bf \hypertarget{CU3.E1}{E1}}: Cuando el cliente no haya llenado algun campo obligatorio, el sistema muestra el mensaje \MSGref{MSG-001}{Campo obligatorio} y regresa al paso \ref{UC3.formulario}.
+			\Titem {\bf \hypertarget{CU3.E2}{E2}}: Cuando el RUAC del cliente ya este registrado en el sistema, el sistema muestra el mensaje \MSGref{MSG-002}{RUAC ya existente} y regresa al paso \ref{UC3.formulario}.
+.
+			\Titem {\bf \hypertarget{CU3.E3}{E3}}: Cuando la mascota no cuenta con las vacunas obligatorias, el sistema muestra el mensaje \MSGref{MSG-004}{Vacunas obligatorias} y regresa al paso \ref{UC3.formulario}
+			\Titem {\bf \hypertarget{CU3.E4}{E4}}: Cuando el cliente ingrese un tipo de dato diferente al solicitado, el sistema muestra el mensaje \MSGref{MSG-007}{Dato no válido} y regresa al paso \ref{UC3.formulario}
+			\Titem {\bf \hypertarget{CU3.E5}{E5}}: Cuando el cliente ingrese un tamaño diferente al antes seleccionado en la reservación, el sistema muestra el mensaje \MSGref{MSG-009}{Tamaño no valido (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)} y continua con el paso \ref{UC3.datos de la mascota}
+			\Titem {\bf \hypertarget{CU3.E6}{E6}}: Cuando el cliente ingrese una raza diferente a la antes seleccionada en la reservación, el sistema muestra el mensaje \MSGref{MSG-010}{Raza no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)} y continua con el paso \ref{UC3.datos de la mascota}
+			\Titem {\bf \hypertarget{CU3.E7}{E7}}: Cuando el cliente ingrese una especie diferente a la antes seleccionada en la reservación, el sistema muestra el mensaje \MSGref{MSG-011}{Especie no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)} y continua con el paso \ref{UC3.datos de la mascota}
+			\Titem {\bf \hypertarget{CU3.E8}{E8}}: Cuando el el tiempo de aplicacion de la vacuna exceda la fecha de check out, el sistema muestra el mensaje \MSGref{MSG-012}{La aplicacion de la vacuna expira antes o durante su estancia}  y regresa al paso \ref{UC3.formulario}
+			\Titem {\bf \hypertarget{CU3.E9}{E9}}: Cuando los datos que se quieren registrar coinciden un 80\% en los datos de un registro que ya existente, el sistema muestra el mensaje \MSGref{MSG-020}{Registro ya existente}  y continua con el paso \ref{UC3.registrar} o termina el caso de uso.
+			
+		\end{Titemize}
+	}\UCitem{Tipo}{
+		% Especifique el tipo de caso de us, puede ser: "Caso de uso primario" o 
+		% "Viene de \\hyperref{CUY}{CUY nombre del CU}" cuando se desprende desde otro caso de uso mediante un extends.
+		Para ejecutar este caso de uso debe pasar primero por el \UCref{CUX}{Iniciar Sesion} o \UCref{CU1}{Registrar Cliente} y  el caso de uso \UCref{CU2}{Regsitrar reservacion}
+	}\UCitem{Observaciones}{
+		% Indique las observaciones al caso de uso, las cuales pueden ser:
+		Ninguna
+		% - Dudas sobre el procedimiento o la especificación.
+		% - Issues detectados
+		% - Suposiciones realizadas.
+		% - Cualquier otra especificacion que considere pertinente que no pudo colocarse en los demás atributos del Caso de uso
+		% - Aclaraciones.
+		% - Notas para el usuario o desarrollador.
+		% - Pendientes (TODO's) en caso de no usar los comentarios.
+	}
+\end{UseCase}
+
+%--------------------------------------
+\begin{UCtrayectoria}
+	% Cada paso debe inicair con un Verbo en infinitivo, siempre especificando el objetivo del paso mas la accion en concreto.
+	% \UCpaso[\UCactor] se refiere al actor y \UCpaso se refiere al sistema.
+	% A continuación viene ejemplos de pasos:
+	% En el siguiente paso: "Ingresa al sistema" es el objetivo del paso y "escribiendo la URL de la aplicación" es la acción en concreto.
+	\UCpaso[\UCactor] \label{UC3.detonante} El cliente selecciona  el botón \IUbutton{Registrar nueva mascota} desde el formulario de la pantalla \IUref{IU2}{Registrar Mascota}.
+	\UCpaso [\UCsist] \label{UC3.formulario} El sistema solicita los datos de la mascota mediante la pantalla  \IUref{IU3}{Registrar datos de la Mascota}.
+	\UCpaso [\UCactor] \label{UC3.datos de la mascota} El cliente proporciona los datos de su mascota.
+	\UCpaso [\UCactor] \label{UC3.CRUAC} El cliente indica si su mascota cuenta con CRUAC \Trayref{CU3}{C}.
+	\UCpaso [\UCactor] \label{UC3.vacunas obligatorias} El cliente selecciona las vacunas obligatorias con las que cuenta su mascota \Trayref{CU3}{B}.
+	% En el siguiente paso está etiquetado para ser referenciado por un error o trayectoria alternativa:
+	 \UCpaso[\UCactor] \label{UC3.solictar registrar} El cliente solicita el registro de la nueva mascota mediante el botón \IUbutton{Registrar} de la pantalla \IUref{IU2}{Registrar Mascota}.
+	% En el siguiente paso se usa el comando \IUbutton 
+\UCpaso[\UCsist]\label {UC3.verificacion campo obligatorio}El sistema verifica que todos los campos obligatorios se hayan llenado \ErrorRef{CU3}{E1}{Campo obligatorio}.   
+\UCpaso[\UCsist] \label{UC3.verificacion formato invalido} El sistema verifica que los datos introducidos tengan un formato válido en los campos correspondientes \ErrorRef{CU3}{E4}{Dato no válido}.
+\UCpaso[\UCsist] \label{UC3.verificacion RUAC} El sistema verifica que no haya una mascota ya registrada con el mismo RUAC \ErrorRef{CU3}{E2}{RUAC ya existente}.
+\UCpaso[\UCsist] \label{UC3.verificacion vacunas obligatorias} El sistema verifica que la mascota cuente con las vacunas obligatorias \ErrorRef{CU3}{E3}{Vacunas obligatoria}.
+\UCpaso[\UCsist] \label{UC3.verificacion duracion vacuna} El sistema verifica que el tiempo de aplicacion de la vacuna no supere la fecha de check out \ErrorRef{CU3}{E8}{La aplicacion de la vacuna expira antes o durante su estancia}.
+\UCpaso[\UCsist] \label{UC3.verificacion tamaño} El sistema verifica que el campo de tamaño no haya sido modificado \ErrorRef{CU3}{E5}{Tamaño no valido(si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)}.
+\UCpaso[\UCsist] \label{UC3.verificacion raza} El sistema verifica que el campo de la raza no haya sido modificado \ErrorRef{CU3}{E6}{Raza no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)}.
+\UCpaso[\UCsist] \label{UC3.verificacion especie} El sistema verifica que el campo de la especie no haya sido modificado \ErrorRef{CU3}{E7}{Especie no valida (si deseas cambiar el tamaño de la mascota esto prodría modificar el precio de la reservación)}.
+\UCpaso[\UCsist] \label{UC3.verificacion duplicidad de datos} El sistema verifica que los datos que se quieren registrar no coincidan en un 80\% con los datos de un registro que ya existente el sistema \ErrorRef{CU3}{E9}{Registro ya existente}.
+\UCpaso[\UCsist] \label{UC3.registrar} El sistema registra la nueva mascota para ese cliente.
+\UCpaso[\UCsist] \label{UC3.seleccionar mascota} El sistema muestra la pantalla \IUref{IU2}{Registar Mascota} y la mascota esta disponible para ser seleccionada en la reservación.
+	
+\end{UCtrayectoria}
+
+
+%--------------------------------------
+% Las trayectorias alternativas se identifican con Letras: A, B, C, etc.
+\begin{UCtrayectoriaA}{CU3}{A}{Cuando la edad de la mascota sea mayor a un año}
+	\UCpaso[\UCsist] El sistema bloqueara las vacunas que ya no es necesario que tenga la mascota.
+	\UCpaso[\UCactor] El cliente proporciona los datos necesarios para las vacunas.\Trayref{CU3}{B}
+	% Se puede desprender otra trayectria alternativa si es necesario.
+	% Finalice la trayectoria indicando si la ejecución se integra a la trayectoria anterior o si termina la ejecución del CU.
+	% Verifique que la redacción de la trayectoria deje en claro si el objetivo del CU se alcanzó o no.
+	\UCpaso[] El Caso de uso continúa en el paso \ref{UC3.formulario}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{CU3}{B}{Cuando el cliente seleccione las vacunas obligatorias que tiene su mascota}
+	\UCpaso [\UCsist]El sistema desplegara 3 campos más para complentar la información de las vacunas aplicadas los cuales son Nombre de la vacuna, Ultima fecha de aplicación, Numero de dosis aplicadas.
+	\UCpaso [\UCactor]El cliente proporciona los datos de las vacunas de su mascota.
+	% Se puede desprender otra trayectria alternativa si es necesario.
+	% Finalice la trayectoria indicando si la ejecución se integra a la trayectoria anterior o si termina la ejecución del CU.
+	% Verifique que la redacción de la trayectoria deje en claro si el objetivo del CU se alcanzó o no.
+	\UCpaso[] El Caso de uso continúa en el paso \ref{UC3.formulario}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{CU3}{C}{Cuando el cliente indique que su mascota cuanta con su CRUAC}
+	\UCpaso [\UCsist]El sistema desplegara un campo mas para poder capturar el CRUAC.
+	\UCpaso [\UCactor]El cliente proporciona el CRUAC de la mascota.
+	% Se puede desprender otra trayectria alternativa si es necesario.
+	% Finalice la trayectoria indicando si la ejecución se integra a la trayectoria anterior o si termina la ejecución del CU.
+	% Verifique que la redacción de la trayectoria deje en claro si el objetivo del CU se alcanzó o no.
+	\UCpaso[] El Caso de uso continúa en el paso \ref{UC3.formulario}.
+\end{UCtrayectoriaA}
+
+
+\begin{UCtrayectoriaA}{CU3}{D}{Cuando el cliente deseé registrar a su mascota posterior a la realización de la reservación}
+	\UCpaso[\UCactor] El cliente selecciona  el botón \IUbutton{Regsitrar mascota} desde la consulta de su reservación en la pantalla \IUref{IU5}{Home Cliente}.
+	\UCpaso [\UCsist] El sistema muestra la pantalla  \IUref{IU2}{Registrar Mascota} y da la opción de seleccionar una mascota ya registrada o registrar una nueva mascota con el botón \IUbutton{Registrar nueva mascota}
+	% Se puede desprender otra trayectria alternativa si es necesario.
+	% Finalice la trayectoria indicando si la ejecución se integra a la trayectoria anterior o si termina la ejecución del CU.
+	% Verifique que la redacción de la trayectoria deje en claro si el objetivo del CU se alcanzó o no.
+	\UCpaso[] El Caso de Uso continúa en el paso \ref{UC3.detonante}.
+\end{UCtrayectoriaA}
+
+
+%--------------------------------------
+% Puntos de extensión
+
+% Comente la siguiente sección en caso de que no hayan puntos de extensión o relaciones de tipo extends.
+\subsection{Puntos de extensión}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+El cliente quiere agregar una alergía a su mascota.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	Del paso \ref{UC3.datos de la mascota} al paso \ref{CUX.etiqueta}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CUZ}{Resgistrar Alergia}.
+}
+
+\subsection{Puntos de extensión}
+\UCExtenssionPoint{
+	% Cuando se dá la extensión del Caso de uso:
+El cliente quiere agregar un tratamiento medico a su mascota.
+}{
+	% Durante la región (en que pasos se puede dar la extensión):
+	Del paso \ref{UC3.datos de la mascota} al paso \ref{CUX.etiqueta}.
+}{
+	% Casos de uso a los que extiende:
+	\UCref{CUZ}{Resgistrar Tratamiento Medico}.
+}
+
+
+
+
+>>>>>>> 7df510d (Agregando cambios minimos e ignorando el archivo proyecto.synctex.gz)
 %-------------------------------------- TERMINA descripción del caso de uso.
