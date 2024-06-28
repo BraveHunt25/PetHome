@@ -11,7 +11,7 @@ const router = Router();
 
 // Rutas necesitadas para consultar y desplegar el menú de razas y especies
 router.get('/AgregarMascotaBusqueda', obtenerMenuEspecies);
-router.get('/AgregarMascotaBusqueda/:especie', obtenerMenuRazas);
+router.get('/AgregarMascotaBusqueda/:idespecie', obtenerMenuRazas);
 
 //Ruta para obtener la lista de sucursales de la cadena de hoteles
 router.get('/ObtenerSucursales', obtenerMenuSucursales);

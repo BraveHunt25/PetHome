@@ -1,15 +1,27 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/LogoPetHome.png'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { obtenerMenuSucursales } from '../api/FormularioAgregarMascota.api';
+import { GeneralContext } from '../context/GeneralContext';
 
 
-function Header({ onFormChange, valoresReservacion }) {
+function Header({ onFormChange }) {
+
+    const {valoresReservacion, setValoresReservacion} = useContext(GeneralContext);
     const [opcionesSucursales, setOpcionesSucursales] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        onFormChange(name, value);
+        // Actualiza el contexto con los nuevos valores
+        setValoresReservacion(prevValues => ({
+            ...prevValues,
+            [name]: value
+        }));
+
+        console.log('valoresReservacion actualizados:', {
+            ...valoresReservacion,
+            [name]: value,
+        });
     };
 
     useEffect(() => {

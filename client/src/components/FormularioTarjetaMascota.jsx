@@ -12,7 +12,7 @@ const FormularioAgregarTarjetaMascota = ({ onAddComponent }) => {
         async function cargarMenuEspecie() {
             try {
                 const response = await obtenerMenuEspecies();
-                setOpcionesEspecie(response.data[0]); // Ajusta según la estructura real de tus datos
+                setOpcionesEspecie(response.data);
             } catch (error) {
                 console.error('Error al cargar las especies:', error);
             }
@@ -64,7 +64,7 @@ const FormularioAgregarTarjetaMascota = ({ onAddComponent }) => {
                     >
                         <option value="" disabled hidden>Especie</option>
                         {opcionesEspecie.map(opcion => (
-                            <option key={opcion.id} value={opcion.especie}>
+                            <option key={opcion.id} value={opcion.id}>
                                 {opcion.especie}
                             </option>
                         ))}

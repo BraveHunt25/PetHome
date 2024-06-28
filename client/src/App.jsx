@@ -1,6 +1,7 @@
-import { GeneralContextProvider } from "./context/Context";
+import { GeneralContext, GeneralContextProvider } from "./context/GeneralContext";
+import { NavLink } from 'react-router-dom';
 import { Routes, Route, Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DetallesCuarto from "./components/DetallesCuarto";
 import DetallesServicio from "./components/DetallesServicio";
 import Header from "./components/HeaderNav";
@@ -14,11 +15,6 @@ import ResumenHospedaje from "./components/ResumenHospedaje";
 import './App.css';
 
 function App() {
-    const [valoresReservacion, setValoresReservacion] = useState({
-        sucursal: '',
-        llegada: '',
-        salida: ''
-    });
 
     const handleFormChange = (name, value) => {
         setValoresReservacion(prevValues => ({
@@ -30,22 +26,20 @@ function App() {
     return (
         <GeneralContextProvider>
             <header>
-                <Header onFormChange={handleFormChange} valoresReservacion={valoresReservacion} />
+                <Header onFormChange={handleFormChange} />
             </header>
             <aside>
                 <PadreAgregarMascota />
                 <hr />
-                <form className="seccion" action="../ResumenHospedaje/ResumenHospedaje.html">
-                    <div className="Boton">
-                        <input type="submit" value="Buscar cuartos" />
-                    </div>
-                </form>
+                <NavLink to="/CuartosDisponibles" className="Boton" id="submit">
+                    Buscar cuartos
+                </NavLink>
                 <br />
                 <br />
             </aside>
             <div>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<PaginaPrincipal />} />
                     <Route path="/PaginaPrincipal" element={<PaginaPrincipal />} />
                     <Route path="/CuartosDisponibles">
                         <Route index element={<ReservarCuarto />} />

@@ -10,9 +10,9 @@ export const obtenerMenuEspecies = async () => {
     }
 }
 
-export const obtenerMenuRazas = async ( especie ) => {
+export const obtenerMenuRazas = async ( idespecie ) => {
     try {
-        const response = await axios.get(`http://localhost:4000/AgregarMascotaBusqueda/${especie}`);
+        const response = await axios.get(`http://localhost:4000/AgregarMascotaBusqueda/${idespecie}`);
         return response;
     } catch (error) {
         console.error('Error al obtener las razas: ', error);
@@ -26,6 +26,16 @@ export const obtenerMenuSucursales = async ( especie ) => {
         return response;
     } catch (error) {
         console.error('Error al obtener las razas: ', error);
+        throw error;
+    }
+}
+
+export const obtenerCatalogoCuartos = async ( sucursal ) => {
+    try {
+        const response = await axios.get(`http://localhost:4000/ObtenerCuartos/${sucursal}`);
+        return response;
+    } catch (error) {
+        console.error('Error al obtener los cuartos: ', error);
         throw error;
     }
 }
