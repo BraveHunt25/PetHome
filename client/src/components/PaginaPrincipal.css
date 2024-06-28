@@ -1,0 +1,17 @@
+.Contenido {
+    background: url("../assets/VistaHotel.jpg") no-repeat center center;
+    background-size: cover;
+    align-content: flex-end;
+    text-align: left;
+    vertical-align: text-bottom;
+    border-radius: 25px;
+}
+
+.Contenido>h1{
+    font-size: 50pt;
+    color: var(--primary-300);
+    text-shadow: var(--text-100) 2px 2px 2px;
+    backdrop-filter: blur(2px);
+    margin: 0% 0% 5% 5%;
+    border-radius: 25px;
+}

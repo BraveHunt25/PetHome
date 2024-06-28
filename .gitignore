@@ -1,2 +1,27 @@
-Server/node_modules
+# Node modules
+**/node_modules
+
+# Logs
+*.log
+
+# Variables de entorno
+.env
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Build directories
+/dist
+/build
+/coverage
+
+# Optional npm cache directory
+.npm
+
+# Editor directories and files
+.idea
 .vscode
+
+# Markdowns para chequeo de pendiente
+*.md

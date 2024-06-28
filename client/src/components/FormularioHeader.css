@@ -1,0 +1,19 @@
+.FormularioHeader{
+    font-family: "Red Hat Display", sans-serif;
+}
+input.inputBox{
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 25px;
+}
+.calendarWrap{
+    display: inline-block;
+    position: relative;
+}
+.calendarElement{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+    z-index: 999;
+}
