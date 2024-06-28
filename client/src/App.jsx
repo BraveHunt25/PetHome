@@ -13,6 +13,7 @@ import ReservarCuarto from "./components/ReservarCuarto";
 import ReservarServicio from "./components/ReservarServicio";
 import ResumenHospedaje from "./components/ResumenHospedaje";
 import './App.css';
+import Login from "./components/login";
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
             </aside>
             <div>
                 <Routes>
-                    <Route path="/" element={<PaginaPrincipal />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/PaginaPrincipal" element={<PaginaPrincipal />} />
                     <Route path="/CuartosDisponibles">
                         <Route index element={<ReservarCuarto />} />
@@ -51,6 +52,7 @@ function App() {
                     </Route>
                     <Route path="/ResumenHospedaje" element={<ResumenHospedaje />} />
                     <Route path="*" element={<NotFound />} />
+                    <Route path="/Login" element={<Login />} />
                 </Routes>
             </div>
             <footer className="footer">

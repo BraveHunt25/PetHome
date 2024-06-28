@@ -64,7 +64,7 @@ const FormularioAgregarTarjetaMascota = ({ onAddComponent }) => {
                     >
                         <option value="" disabled hidden>Especie</option>
                         {opcionesEspecie.map(opcion => (
-                            <option key={opcion.id} value={opcion.id}>
+                            <option key={opcion.id} value={opcion.especie}>
                                 {opcion.especie}
                             </option>
                         ))}
