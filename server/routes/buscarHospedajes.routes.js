@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
     obtenerMenuEspecies,
     obtenerMenuRazas,
+    obtenerMenuSucursales,
     obtenerServiciosDisponibles,
     obtenerTiposCuartoSucursal
 } from "../controllers/buscarHospedajes.controllers.js"
@@ -11,6 +12,9 @@ const router = Router();
 // Rutas necesitadas para consultar y desplegar el menú de razas y especies
 router.get('/AgregarMascotaBusqueda', obtenerMenuEspecies);
 router.get('/AgregarMascotaBusqueda/:especie', obtenerMenuRazas);
+
+//Ruta para obtener la lista de sucursales de la cadena de hoteles
+router.get('/ObtenerSucursales', obtenerMenuSucursales);
 
 // Ruta para obtener la lista de cuartos que se encuentren en la sucursal solicitada
 router.get('/ObtenerCuartos/:sucursal', obtenerTiposCuartoSucursal);

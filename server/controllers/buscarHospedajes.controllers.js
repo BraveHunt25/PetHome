@@ -22,6 +22,16 @@ export const obtenerMenuRazas = async (req, res) => {
     }
 }
 
+//Controlador para obtener la lista de sucursales de la cadena de hoteles
+export const obtenerMenuSucursales = async (req, res) => {
+    try {
+        const [result] = await pool.query("SELECT ID_SUCURSAL as id, NOMBRE_SUCURSAL as sucursal FROM sucursal");
+        res.json(result);
+    } catch (error) {
+        return res.status(500).json({ message: error.message })
+    }
+}
+
 //Controlador para obtener la lista de cuartos que se encuentren en la sucursal solicitada
 export const obtenerTiposCuartoSucursal = async (req, res) => {
     const [result] = await pool.query("SELECT DISTINCT cuarto.ID_TIPO_CUARTO tipo.NOMBRE_CUARTO tipo.PRECIO_CUARTO FROM cuarto INNER JOIN tipo_cuarto ON cuarto.ID_TIPO_CUARTO = tipo.ID_TIPO_CUARTO WHERE ID_SUCURSAL = ?", [req.params.sucursal]);

@@ -1,12 +1,28 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/LogoPetHome.png'
+import { useEffect, useState } from 'react';
+import { obtenerMenuSucursales } from '../api/FormularioAgregarMascota.api';
 
 
 function Header({ onFormChange, valoresReservacion }) {
+    const [opcionesSucursales, setOpcionesSucursales] = useState([]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         onFormChange(name, value);
     };
+
+    useEffect(() => {
+        async function cargarMenuSucursales() {
+            try {
+                const response = await obtenerMenuSucursales();
+                setOpcionesSucursales(response.data);
+            } catch (error) {
+                console.error('Error al cargar las sucursales:', error);
+            }
+        }
+        cargarMenuSucursales();
+    }, []);
 
     return (
         <>
@@ -28,10 +44,12 @@ function Header({ onFormChange, valoresReservacion }) {
                                 onChange={handleChange}
                                 required
                             >
-                                <option value="" disabled>Selecciona la sucursal</option>
-                                <option value="Ciudad de Mexico">Ciudad de México</option>
-                                <option value="Monterrey">Monterrey</option>
-                                <option value="Merida">Mérida</option>
+                                <option value="" disabled hidden>Selecciona la sucursal</option>
+                                {opcionesSucursales.map(opcion => (
+                                    <option key={opcion.id} value={opcion.sucursal}>
+                                        {opcion.sucursal}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                         <div className="Fecha" id="BotonLlegada">

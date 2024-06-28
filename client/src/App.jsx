@@ -1,3 +1,4 @@
+import { GeneralContextProvider } from "./context/Context";
 import { Routes, Route, Link } from "react-router-dom";
 import React, { useState } from "react";
 import DetallesCuarto from "./components/DetallesCuarto";
@@ -27,7 +28,7 @@ function App() {
     };
 
     return (
-        <>
+        <GeneralContextProvider>
             <header>
                 <Header onFormChange={handleFormChange} valoresReservacion={valoresReservacion} />
             </header>
@@ -69,7 +70,7 @@ function App() {
                     </div>
                 </div>
             </footer>
-        </>
+        </GeneralContextProvider>
     )
 }
 

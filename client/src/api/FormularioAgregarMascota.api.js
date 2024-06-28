@@ -19,3 +19,13 @@ export const obtenerMenuRazas = async ( especie ) => {
         throw error;
     }
 }
+
+export const obtenerMenuSucursales = async ( especie ) => {
+    try {
+        const response = await axios.get(`http://localhost:4000/ObtenerSucursales`);
+        return response;
+    } catch (error) {
+        console.error('Error al obtener las razas: ', error);
+        throw error;
+    }
+}
